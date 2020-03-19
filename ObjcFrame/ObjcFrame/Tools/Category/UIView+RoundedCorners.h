@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  剪裁圆角(只能剪裁,不能改变位置和大小)
 
  @param corners 需要剪裁的角      可同时取多个值 UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight | UIRectCornerAllCorners
- @param radii 圆角大小
+ @param radii 圆角大小(半径)
  */
 - (void)clipRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii;
 

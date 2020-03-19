@@ -12,6 +12,8 @@
 
 /**
  为了兼容在storyboard中设置的KVC颜色生效
+ 
+ 使用方法: layer.borderColorFromUIColor
 
  @param color UIColor
  */
@@ -19,6 +21,9 @@
     self.borderColor = color.CGColor;
 }
 
+
+/// 设置阴影颜色
+/// @param color UIColor
 - (void)setShadowColorFromUIColor:(UIColor *)color {
     self.shadowColor = color.CGColor;
 }
