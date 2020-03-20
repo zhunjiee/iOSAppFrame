@@ -13,22 +13,32 @@
 @end
 
 @implementation MessageViewController
+static NSString * const CellReusedID = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self setupNavigationBar];
+    [self registerTableViewCell];
+}
+
+- (void)setupNavigationBar {
     self.title = @"消息";
     self.tableView.backgroundColor = [UIColor redColor];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)registerTableViewCell {
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReusedID];
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReusedID];
+    cell.textLabel.text = [NSString stringWithFormat:@"第%ld行", (long)indexPath.row];
+    return cell;
+}
 
 @end

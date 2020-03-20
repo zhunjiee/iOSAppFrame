@@ -51,6 +51,10 @@ extension BaseNavigationController {
         let navBar = UINavigationBar.appearance()
         // 取消毛玻璃效果
         navBar.isTranslucent = false
+        // 去除分割线
+        navBar.shadowImage = UIImage()
+        navBar.backIndicatorImage = UIImage()
+        
         // 设置标题文字属性
         var attrs = [NSAttributedString.Key : Any]()
         attrs[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: 18.0)

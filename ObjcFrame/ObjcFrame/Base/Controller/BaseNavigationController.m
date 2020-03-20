@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 设置手势代理,开启向右滑返回功能
     self.interactivePopGestureRecognizer.delegate = self;
 }
 

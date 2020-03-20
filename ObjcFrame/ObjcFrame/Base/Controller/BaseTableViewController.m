@@ -20,8 +20,6 @@
 }
 
 - (void)initView {
-    // view 不被导航栏遮挡
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.backgroundColor =  BACKGROUND_COLOR;
     self.tableView.showsVerticalScrollIndicator = NO;
 }

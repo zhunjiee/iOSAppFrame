@@ -18,17 +18,14 @@
     [super viewDidLoad];
     
     self.title = @"首页";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor orangeColor];
+    [self createTestView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)createTestView {
+    UIView *test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    test.backgroundColor = [UIColor redColor];
+    [self.view addSubview:test];
 }
-*/
 
 @end

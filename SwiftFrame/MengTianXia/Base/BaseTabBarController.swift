@@ -57,6 +57,9 @@ extension BaseTabBarController {
     fileprivate func setUpTabBarItemAttributes() {
         // 取消毛玻璃效果
         UITabBar.appearance().isTranslucent = false
+        // 去除分割线
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
         
         // 设置文字颜色
         let item = UITabBarItem.appearance()
