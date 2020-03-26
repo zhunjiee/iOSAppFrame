@@ -60,8 +60,8 @@
 }
 
 - (void)setSize:(CGSize)size{
-    self.width      = size.width;
-    self.height     = size.height;
+    self.width = size.width;
+    self.height = size.height;
 }
 
 - (CGSize)size {

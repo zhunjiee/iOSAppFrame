@@ -25,17 +25,95 @@ if (dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL) == dispatch_queue_get
 
 @implementation MBProgressHUD (HBW)
 
+#pragma mark - 在指定的view上显示hud
+/// 成功
++ (void)showSuccess:(NSString *)success onView:(UIView *)view {
+    [self show:success icon:@"Resource.bundle/success" view:view];
+}
+
+/// 错误
++ (void)showError:(NSString *)error onView:(UIView *)view {
+    [self show:error icon:@"Resource.bundle/error" view:view];
+}
+
+/// 警告
++ (void)showWarning:(NSString *)warning onView:(UIView *)view {
+    [self show:warning icon:@"Resource.bundle/warning" view:view];
+}
+
+/// 纯文本
++ (void)showText:(NSString *)text onView:(UIView *)view {
+    [self show:text icon:nil view:view];
+}
+
+/// 自定义图片
++ (void)showMessageWithImageName:(NSString *)imageName message:(NSString *)message onView:(UIView *)view {
+    [self show:message icon:imageName view:view];
+}
+
+/// 菊花 + 文字
++ (void)showLoadingMessage:(NSString *)message onView:(UIView *)view  {
+    [self showLoading:message onView:view];
+}
+
+/// 只显示菊花
++ (void)showLoadingOnView:(UIView *)view {
+    [self showLoading:@"" onView:view];
+}
+
+
+#pragma mark - 在window上显示hud
+
++ (void)showSuccess:(NSString *)success {
+    [self show:success icon:@"Resource.bundle/success" view:nil];
+}
+
++ (void)showError:(NSString *)error {
+    [self show:error icon:@"Resource.bundle/error" view:nil];
+}
+
++ (void)showWarning:(NSString *)warning {
+    [self show:warning icon:@"Resource.bundle/warning" view:nil];
+}
+
++ (void)showText:(NSString *)text {
+    [self show:text icon:nil view:nil];
+}
+
++ (void)showMessageWithImageName:(NSString *)imageName message:(NSString *)message {
+    [self show:message icon:imageName view:nil];
+}
+
+// 显示 转圈菊花 + 文字
++ (void)showLoadingMessage:(NSString *)message {
+    UIView *view = [self getWindowView];
+    [self showLoading:message onView:view];
+}
+
+// 只显示菊花
++ (void)showLoading {
+    UIView *view = [self getWindowView];
+    [self showLoading:@"" onView:view];
+}
+
+#pragma mark - 隐藏方法
+
++ (void)hideHUDForView:(UIView *)view{
+    [self hideHUDForView:view animated:YES];
+}
+
++ (void)hideHUD {
+    UIView *view = [self getWindowView];
+    [self hideHUDForView:view];
+}
+
+
 #pragma mark - 显示基本信息
 
 + (void)show:(NSString *)text icon:(NSString *)iconName view:(UIView *)view {
     if (view == nil) {
-        if ([[UIApplication sharedApplication] keyWindow] != nil) {
-            view = [[UIApplication sharedApplication] keyWindow];
-        } else {
-            view = [[UIApplication sharedApplication].windows lastObject];
-        }
+        view = [self getWindowView];
     }
-    
     //在显示新的之前需要隐藏掉旧的，否则会导致多个loading页面重叠
     [self hideHUDForView:view animated:YES];
 
@@ -56,7 +134,7 @@ if (dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL) == dispatch_queue_get
         hud.contentColor = [UIColor whiteColor];
     }
     hud.label.text = text;
-    UIImage *image = [[UIImage imageNamed:[NSString stringWithFormat:@"Resource.bundle/%@", iconName]] imageWithRenderingMode:renderMode];
+    UIImage *image = [[UIImage imageNamed:iconName] imageWithRenderingMode:renderMode];
     image = image == nil ? [[UIImage imageNamed:iconName] imageWithRenderingMode:renderMode] : image;
     hud.customView = [[UIImageView alloc] initWithImage:image];
     hud.mode = MBProgressHUDModeCustomView;
@@ -68,39 +146,12 @@ if (dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL) == dispatch_queue_get
 }
 
 
-#pragma mark - 在指定的view上显示hud
-
-+ (void)showSuccess:(NSString *)success onView:(UIView *)view {
-    [self show:success icon:@"success" view:view];
-}
-
-+ (void)showError:(NSString *)error onView:(UIView *)view {
-    [self show:error icon:@"error" view:view];
-}
-
-+ (void)showWarning:(NSString *)warning onView:(UIView *)view {
-    [self show:warning icon:@"warning" view:view];
-}
-
-+ (void)showText:(NSString *)text onView:(UIView *)view {
-    [self show:text icon:nil view:view];
-}
-
-+ (void)showMessageWithImageName:(NSString *)imageName message:(NSString *)message toView:(UIView *)view {
-    [self show:message icon:imageName view:view];
-}
-
 #pragma mark - 显示带旋转菊花的hud
 
-+ (void)showLoadingMessage:(NSString *)message onView:(UIView *)view {
++ (void)showLoading:(NSString *)message onView:(UIView *)view {
     if (view == nil) {
-        if ([[UIApplication sharedApplication] keyWindow] != nil) {
-            view = [[UIApplication sharedApplication] keyWindow];
-        } else {
-            view = [[UIApplication sharedApplication].windows lastObject];
-        }
+        view = [self getWindowView];
     }
-    
     //在显示新的之前需要隐藏掉旧的，否则会导致多个loading页面重叠
     [self hideHUDForView:view animated:YES];
 
@@ -121,59 +172,15 @@ if (dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL) == dispatch_queue_get
     }
 }
 
-+ (void)showLoadingOnView:(UIView *)view {
-    [self showLoadingMessage:@"" onView:view];
-}
-
-
-#pragma mark - 在window上显示hud
-
-+ (void)showSuccess:(NSString *)success {
-    [self show:success icon:@"success" view:nil];
-}
-
-+ (void)showError:(NSString *)error {
-    [self show:error icon:@"error" view:nil];
-}
-
-+ (void)showWarning:(NSString *)warning {
-    [self show:warning icon:@"warning" view:nil];
-}
-
-+ (void)showText:(NSString *)text {
-    [self show:text icon:nil view:nil];
-}
-
-+ (void)showMessageWithImageName:(NSString *)imageName message:(NSString *)message {
-    [self show:message icon:imageName view:nil];
-}
-
-// 显示 转圈菊花 + 文字
-+ (void)showLoadingMessage:(NSString *)message {
-    [self showLoadingMessage:message onView:nil];
-}
-
-// 只显示菊花
-+ (void)showLoadingView {
-    [self showLoadingOnView:nil];
-}
-
-
-#pragma mark - 隐藏方法
-
-+ (void)hideHUDForView:(UIView *)view{
-    if (view == nil) {
-        if ([[UIApplication sharedApplication] keyWindow] != nil) {
-            view = [[UIApplication sharedApplication] keyWindow];
-        } else {
-            view = [[UIApplication sharedApplication].windows lastObject];
-        }
+/// 获取window视图
++  (UIView *)getWindowView {
+    UIView *view;
+    if ([[UIApplication sharedApplication] keyWindow] != nil) {
+        view = [[UIApplication sharedApplication] keyWindow];
+    } else {
+        view = [[UIApplication sharedApplication].windows lastObject];
     }
-    [self hideHUDForView:view animated:YES];
-}
-
-+ (void)hideHUD {
-    [self hideHUDForView:nil];
+    return view;
 }
 
 @end

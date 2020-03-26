@@ -10,9 +10,6 @@
 		4A098333FC93404A7FA78905 /* Pods_MengTianXia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F1EF1562F77CDCA0D578A9 /* Pods_MengTianXia.framework */; };
 		7804950022EAAD3300CB3ACD /* HUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780494FF22EAAD3300CB3ACD /* HUD+Extension.swift */; };
 		7804950222EAAD7100CB3ACD /* HUDStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804950122EAAD7100CB3ACD /* HUDStyleManager.swift */; };
-		7804950822EACDE200CB3ACD /* bw_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7804950522EACDE200CB3ACD /* bw_error@2x.png */; };
-		7804950922EACDE200CB3ACD /* bw_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7804950622EACDE200CB3ACD /* bw_warning@2x.png */; };
-		7804950A22EACDE200CB3ACD /* bw_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7804950722EACDE200CB3ACD /* bw_success@2x.png */; };
 		7804950E22EB2D4100CB3ACD /* BWSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804950D22EB2D4100CB3ACD /* BWSearchBarView.swift */; };
 		7804951122EBE5BF00CB3ACD /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7804951022EBE5BF00CB3ACD /* UIView+Frame.swift */; };
 		7812F7A722E94F36003964FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7812F7A622E94F36003964FA /* AppDelegate.swift */; };
@@ -32,6 +29,7 @@
 		782AA8B422F2BBAC00B6E35E /* JSON2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782AA8B322F2BBAC00B6E35E /* JSON2Model.swift */; };
 		782AA8B622F2C60E00B6E35E /* BWUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782AA8B522F2C60E00B6E35E /* BWUserDefaults.swift */; };
 		782AA8B822F2C6D700B6E35E /* UIView+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782AA8B722F2C6D700B6E35E /* UIView+Circle.swift */; };
+		784D8A1E242C697100AF8327 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 784D8A1D242C697000AF8327 /* Resource.bundle */; };
 		78F77DCD22EC2A1700F9ADB8 /* UIImage+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F77DCC22EC2A1700F9ADB8 /* UIImage+Circle.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,9 +37,6 @@
 		757513BD6BAD5653C4CD85C3 /* Pods-MengTianXia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MengTianXia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MengTianXia/Pods-MengTianXia.debug.xcconfig"; sourceTree = "<group>"; };
 		780494FF22EAAD3300CB3ACD /* HUD+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HUD+Extension.swift"; sourceTree = "<group>"; };
 		7804950122EAAD7100CB3ACD /* HUDStyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDStyleManager.swift; sourceTree = "<group>"; };
-		7804950522EACDE200CB3ACD /* bw_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bw_error@2x.png"; sourceTree = "<group>"; };
-		7804950622EACDE200CB3ACD /* bw_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bw_warning@2x.png"; sourceTree = "<group>"; };
-		7804950722EACDE200CB3ACD /* bw_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bw_success@2x.png"; sourceTree = "<group>"; };
 		7804950D22EB2D4100CB3ACD /* BWSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWSearchBarView.swift; sourceTree = "<group>"; };
 		7804951022EBE5BF00CB3ACD /* UIView+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		7812F7A322E94F36003964FA /* MengTianXia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MengTianXia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +59,7 @@
 		782AA8B322F2BBAC00B6E35E /* JSON2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON2Model.swift; sourceTree = "<group>"; };
 		782AA8B522F2C60E00B6E35E /* BWUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWUserDefaults.swift; sourceTree = "<group>"; };
 		782AA8B722F2C6D700B6E35E /* UIView+Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Circle.swift"; sourceTree = "<group>"; };
+		784D8A1D242C697000AF8327 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 		78F77DCC22EC2A1700F9ADB8 /* UIImage+Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Circle.swift"; sourceTree = "<group>"; };
 		C1F1EF1562F77CDCA0D578A9 /* Pods_MengTianXia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MengTianXia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62B6E0DE5E3786EB3862866 /* Pods-MengTianXia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MengTianXia.release.xcconfig"; path = "Pods/Target Support Files/Pods-MengTianXia/Pods-MengTianXia.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,21 +88,11 @@
 		7804950322EACDD200CB3ACD /* MBProgressHUD+Extension */ = {
 			isa = PBXGroup;
 			children = (
-				7804950422EACDE200CB3ACD /* Resource */,
+				784D8A1D242C697000AF8327 /* Resource.bundle */,
 				780494FF22EAAD3300CB3ACD /* HUD+Extension.swift */,
 				7804950122EAAD7100CB3ACD /* HUDStyleManager.swift */,
 			);
 			path = "MBProgressHUD+Extension";
-			sourceTree = "<group>";
-		};
-		7804950422EACDE200CB3ACD /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				7804950522EACDE200CB3ACD /* bw_error@2x.png */,
-				7804950622EACDE200CB3ACD /* bw_warning@2x.png */,
-				7804950722EACDE200CB3ACD /* bw_success@2x.png */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		7804950F22EBDFF300CB3ACD /* Extension */ = {
@@ -394,10 +380,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7804950922EACDE200CB3ACD /* bw_warning@2x.png in Resources */,
-				7804950A22EACDE200CB3ACD /* bw_success@2x.png in Resources */,
 				7812F7AE22E94F37003964FA /* Assets.xcassets in Resources */,
-				7804950822EACDE200CB3ACD /* bw_error@2x.png in Resources */,
+				784D8A1E242C697100AF8327 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

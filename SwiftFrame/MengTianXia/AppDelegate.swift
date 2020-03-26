@@ -15,13 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        setupRootViewController()
+        setupThirdLibrary()
+        return true
+    }
+    
+    /// 设置根控制器
+    func setupRootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC = BaseTabBarController()
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
-        
-        return true
     }
+    
+    /// 三方库配置
+    func setupThirdLibrary() {
+        // HUD蒙版
+        HUDStyleManager.sharedInstance.defaultStyle()
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

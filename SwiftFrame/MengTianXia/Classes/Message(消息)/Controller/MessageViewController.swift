@@ -15,6 +15,8 @@ class MessageViewController: BaseViewController {
 
         navigationItem.title = "消息"
         view.backgroundColor = UIColor.green
+        
+        MBProgressHUD.showLoading(on: view)
     }
     
 

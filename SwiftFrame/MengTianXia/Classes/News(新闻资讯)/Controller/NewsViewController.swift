@@ -15,6 +15,16 @@ class NewsViewController: BaseViewController {
 
         navigationItem.title = "新闻资讯"
         view.backgroundColor = UIColor.blue
+        
+        let btn = UIButton(type: .system)
+        btn.setTitle("Toast Show Success", for: .normal)
+        btn.frame = CGRect(x: 100, y: 100, width: 200, height: 30)
+        btn.addTarget(self, action: #selector(btnDidClick), for: .touchUpInside)
+        view.addSubview(btn)
+    }
+    
+    @objc func btnDidClick(sender: UIButton) {
+        MBProgressHUD.showSuccess("成功", on: view)
     }
     
 

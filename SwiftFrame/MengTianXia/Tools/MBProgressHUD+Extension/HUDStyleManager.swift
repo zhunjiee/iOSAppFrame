@@ -13,8 +13,8 @@ enum CustomHUDStyle: Int {
     case dimBackgroundStyle = 1     // 黑色背景(老版本样式)
 }
 
-class BWLoadingStyleManager: NSObject {
-    static let sharedInstance = BWLoadingStyleManager()
+class HUDStyleManager: NSObject {
+    static let sharedInstance = HUDStyleManager()
     
     var hudStyle: CustomHUDStyle = .dimBackgroundStyle
     var hudShowTime: TimeInterval = 2.0

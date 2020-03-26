@@ -46,8 +46,7 @@ class HomeViewController: BaseViewController {
         getConfigParamaters()
         getOrderList()
         
-        
-        MBProgressHUD.showMessage("123456", to: self.view)
+        MBProgressHUD.showLoadingMessage("123456")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             MBProgressHUD.hideHUD()
         }
