@@ -19,11 +19,11 @@
 #import <XHLaunchAd/XHLaunchAd.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import "UIBarButtonItem+Extension.h"     // 自定义TabBarItem
-#import "UIViewController+TabBarAndNavHeight.h"     // 获取状态栏/导航栏/TabBar的高度
+#import "UIViewController+Extension.h"     // 获取状态栏/导航栏/TabBar的高度等
 #import "UIView+Frame.h"        // frame简写
 #import "UIImage+Circle.h"      // 圆形图片
-#import "UIView+RoundedCorners.h"       // 圆角剪裁
-#import "UIView+BorderLine.h"       // borderLine绘制
+#import "UIView+CornerAndBorder.h"       // 圆角及边框
+#import "UIView+Extension.h"       // 当前控制器等
 #import "CALayer+Extension.h"       // xib添加运行时属性设置borderColor
 #import "ConstantHeader.h"      // 常量
 #import "MBProgressHUD+HBW.h"

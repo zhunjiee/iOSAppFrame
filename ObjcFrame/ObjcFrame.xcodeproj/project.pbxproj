@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		78011D3423602DCC00BEFDE3 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1523602DCC00BEFDE3 /* UIView+Frame.m */; };
 		78011D3523602DCC00BEFDE3 /* UIImage+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1723602DCC00BEFDE3 /* UIImage+Circle.m */; };
-		78011D3623602DCC00BEFDE3 /* UIView+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1A23602DCC00BEFDE3 /* UIView+RoundedCorners.m */; };
 		78011D3723602DCC00BEFDE3 /* RightImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1B23602DCC00BEFDE3 /* RightImageButton.m */; };
-		78011D3823602DCC00BEFDE3 /* UIViewController+TabBarAndNavHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1C23602DCC00BEFDE3 /* UIViewController+TabBarAndNavHeight.m */; };
-		78011D3923602DCC00BEFDE3 /* UIView+BorderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1D23602DCC00BEFDE3 /* UIView+BorderLine.m */; };
+		78011D3823602DCC00BEFDE3 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1C23602DCC00BEFDE3 /* UIViewController+Extension.m */; };
 		78011D3A23602DCC00BEFDE3 /* BWCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1E23602DCC00BEFDE3 /* BWCustomButton.m */; };
 		78011D3B23602DCC00BEFDE3 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D1F23602DCC00BEFDE3 /* UIBarButtonItem+Extension.m */; };
 		78011D3C23602DCC00BEFDE3 /* TopImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D2123602DCC00BEFDE3 /* TopImageButton.m */; };
@@ -25,6 +23,8 @@
 		78011D4C2360334000BEFDE3 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 78011D492360334000BEFDE3 /* Resource.bundle */; };
 		78011D4D2360334000BEFDE3 /* MBProgressHUD+HBW.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D4A2360334000BEFDE3 /* MBProgressHUD+HBW.m */; };
 		78011D502360342200BEFDE3 /* BWLoadingStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78011D4F2360342200BEFDE3 /* BWLoadingStyleManager.m */; };
+		7805728B243176FD008B8B2C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805728A243176FD008B8B2C /* UIView+Extension.m */; };
+		7805728E24317ACB008B8B2C /* UIView+CornerAndBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805728D24317ACB008B8B2C /* UIView+CornerAndBorder.m */; };
 		785D0A892360380600C61F31 /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785D0A882360380600C61F31 /* BaseCollectionViewController.m */; };
 		789B784922FD556400C43ADB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B784822FD556400C43ADB /* AppDelegate.m */; };
 		789B785122FD556500C43ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789B785022FD556500C43ADB /* Assets.xcassets */; };
@@ -38,6 +38,7 @@
 		789B78A022FD562D00C43ADB /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B788E22FD562D00C43ADB /* BaseNavigationController.m */; };
 		789B78A122FD562D00C43ADB /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B789122FD562D00C43ADB /* BaseTabBarController.m */; };
 		789B78A322FD5B4C00C43ADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789B78A222FD5B4C00C43ADB /* LaunchScreen.storyboard */; };
+		78A3E872242DF71800D809B3 /* NSObject+BWAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A3E871242DF71800D809B3 /* NSObject+BWAlert.m */; };
 		D13094E58B1EE51860CA2D94 /* Pods_ObjcFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8367CAD019285D80F68EF4DA /* Pods_ObjcFrame.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,24 +46,20 @@
 		35D8FC9AE276E64001AA1935 /* Pods-ObjcFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcFrame.debug.xcconfig"; path = "Target Support Files/Pods-ObjcFrame/Pods-ObjcFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		566319834576408A47453CEC /* Pods-ObjcFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcFrame.release.xcconfig"; path = "Target Support Files/Pods-ObjcFrame/Pods-ObjcFrame.release.xcconfig"; sourceTree = "<group>"; };
 		78011D1123602DCC00BEFDE3 /* BWCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWCustomButton.h; sourceTree = "<group>"; };
-		78011D1223602DCC00BEFDE3 /* UIView+BorderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BorderLine.h"; sourceTree = "<group>"; };
-		78011D1323602DCC00BEFDE3 /* UIViewController+TabBarAndNavHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBarAndNavHeight.h"; sourceTree = "<group>"; };
+		78011D1323602DCC00BEFDE3 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		78011D1423602DCC00BEFDE3 /* RightImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightImageButton.h; sourceTree = "<group>"; };
 		78011D1523602DCC00BEFDE3 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		78011D1623602DCC00BEFDE3 /* TopImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopImageButton.h; sourceTree = "<group>"; };
 		78011D1723602DCC00BEFDE3 /* UIImage+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Circle.m"; sourceTree = "<group>"; };
 		78011D1823602DCC00BEFDE3 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		78011D1923602DCC00BEFDE3 /* CALayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
-		78011D1A23602DCC00BEFDE3 /* UIView+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorners.m"; sourceTree = "<group>"; };
 		78011D1B23602DCC00BEFDE3 /* RightImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightImageButton.m; sourceTree = "<group>"; };
-		78011D1C23602DCC00BEFDE3 /* UIViewController+TabBarAndNavHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBarAndNavHeight.m"; sourceTree = "<group>"; };
-		78011D1D23602DCC00BEFDE3 /* UIView+BorderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BorderLine.m"; sourceTree = "<group>"; };
+		78011D1C23602DCC00BEFDE3 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		78011D1E23602DCC00BEFDE3 /* BWCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWCustomButton.m; sourceTree = "<group>"; };
 		78011D1F23602DCC00BEFDE3 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		78011D2023602DCC00BEFDE3 /* UIImage+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Circle.h"; sourceTree = "<group>"; };
 		78011D2123602DCC00BEFDE3 /* TopImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopImageButton.m; sourceTree = "<group>"; };
 		78011D2223602DCC00BEFDE3 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		78011D2323602DCC00BEFDE3 /* UIView+RoundedCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorners.h"; sourceTree = "<group>"; };
 		78011D2423602DCC00BEFDE3 /* CALayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		78011D2623602DCC00BEFDE3 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		78011D2823602DCC00BEFDE3 /* UploadParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadParam.h; sourceTree = "<group>"; };
@@ -81,6 +78,10 @@
 		78011D4A2360334000BEFDE3 /* MBProgressHUD+HBW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HBW.m"; sourceTree = "<group>"; };
 		78011D4E2360342200BEFDE3 /* BWLoadingStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLoadingStyleManager.h; sourceTree = "<group>"; };
 		78011D4F2360342200BEFDE3 /* BWLoadingStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLoadingStyleManager.m; sourceTree = "<group>"; };
+		78057289243176FD008B8B2C /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		7805728A243176FD008B8B2C /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		7805728C24317ACB008B8B2C /* UIView+CornerAndBorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerAndBorder.h"; sourceTree = "<group>"; };
+		7805728D24317ACB008B8B2C /* UIView+CornerAndBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerAndBorder.m"; sourceTree = "<group>"; };
 		785D0A872360380600C61F31 /* BaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
 		785D0A882360380600C61F31 /* BaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
 		789B784422FD556400C43ADB /* ObjcFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +108,8 @@
 		789B789122FD562D00C43ADB /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		789B789222FD562D00C43ADB /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		789B78A222FD5B4C00C43ADB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78A3E870242DF71800D809B3 /* NSObject+BWAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BWAlert.h"; sourceTree = "<group>"; };
+		78A3E871242DF71800D809B3 /* NSObject+BWAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BWAlert.m"; sourceTree = "<group>"; };
 		8367CAD019285D80F68EF4DA /* Pods_ObjcFrame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcFrame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,20 +128,22 @@
 		78011D1023602DCC00BEFDE3 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				78A3E870242DF71800D809B3 /* NSObject+BWAlert.h */,
+				78A3E871242DF71800D809B3 /* NSObject+BWAlert.m */,
 				78011D2223602DCC00BEFDE3 /* UIView+Frame.h */,
 				78011D1523602DCC00BEFDE3 /* UIView+Frame.m */,
-				78011D1323602DCC00BEFDE3 /* UIViewController+TabBarAndNavHeight.h */,
-				78011D1C23602DCC00BEFDE3 /* UIViewController+TabBarAndNavHeight.m */,
+				78011D1323602DCC00BEFDE3 /* UIViewController+Extension.h */,
+				78011D1C23602DCC00BEFDE3 /* UIViewController+Extension.m */,
 				78011D1823602DCC00BEFDE3 /* UIBarButtonItem+Extension.h */,
 				78011D1F23602DCC00BEFDE3 /* UIBarButtonItem+Extension.m */,
 				78011D2023602DCC00BEFDE3 /* UIImage+Circle.h */,
 				78011D1723602DCC00BEFDE3 /* UIImage+Circle.m */,
-				78011D2323602DCC00BEFDE3 /* UIView+RoundedCorners.h */,
-				78011D1A23602DCC00BEFDE3 /* UIView+RoundedCorners.m */,
-				78011D1223602DCC00BEFDE3 /* UIView+BorderLine.h */,
-				78011D1D23602DCC00BEFDE3 /* UIView+BorderLine.m */,
 				78011D1923602DCC00BEFDE3 /* CALayer+Extension.h */,
 				78011D2423602DCC00BEFDE3 /* CALayer+Extension.m */,
+				78057289243176FD008B8B2C /* UIView+Extension.h */,
+				7805728A243176FD008B8B2C /* UIView+Extension.m */,
+				7805728C24317ACB008B8B2C /* UIView+CornerAndBorder.h */,
+				7805728D24317ACB008B8B2C /* UIView+CornerAndBorder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -231,8 +236,8 @@
 			children = (
 				789B788922FD562D00C43ADB /* Base */,
 				789B785D22FD562D00C43ADB /* Classes */,
-				789B787A22FD562D00C43ADB /* Frameworks */,
-				789B788822FD562D00C43ADB /* Tools */,
+				789B787A22FD562D00C43ADB /* Library */,
+				789B788822FD562D00C43ADB /* Utils */,
 				789B787B22FD562D00C43ADB /* Others */,
 				789B784722FD556400C43ADB /* AppDelegate.h */,
 				789B784822FD556400C43ADB /* AppDelegate.m */,
@@ -419,12 +424,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		789B787A22FD562D00C43ADB /* Frameworks */ = {
+		789B787A22FD562D00C43ADB /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				78011D452360334000BEFDE3 /* MBProgressHUD+HBW */,
 			);
-			path = Frameworks;
+			path = Library;
 			sourceTree = "<group>";
 		};
 		789B787B22FD562D00C43ADB /* Others */ = {
@@ -436,7 +441,7 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
-		789B788822FD562D00C43ADB /* Tools */ = {
+		789B788822FD562D00C43ADB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				78011D4323602EF900BEFDE3 /* CustomButton(自定义按钮) */,
@@ -445,7 +450,7 @@
 				78011D3123602DCC00BEFDE3 /* MJExtensionConfig */,
 				78011D1023602DCC00BEFDE3 /* Category */,
 			);
-			path = Tools;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		789B788922FD562D00C43ADB /* Base */ = {
@@ -620,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7805728B243176FD008B8B2C /* UIView+Extension.m in Sources */,
 				789B789622FD562D00C43ADB /* MemberViewController.m in Sources */,
 				789B789722FD562D00C43ADB /* MessageViewController.m in Sources */,
 				789B785722FD556500C43ADB /* main.m in Sources */,
@@ -630,18 +636,18 @@
 				78011D4023602DCC00BEFDE3 /* NetworkManager.m in Sources */,
 				789B789822FD562D00C43ADB /* NewsViewController.m in Sources */,
 				78011D3423602DCC00BEFDE3 /* UIView+Frame.m in Sources */,
-				78011D3823602DCC00BEFDE3 /* UIViewController+TabBarAndNavHeight.m in Sources */,
+				78A3E872242DF71800D809B3 /* NSObject+BWAlert.m in Sources */,
+				78011D3823602DCC00BEFDE3 /* UIViewController+Extension.m in Sources */,
 				78011D3E23602DCC00BEFDE3 /* HttpRequest.m in Sources */,
 				78011D3D23602DCC00BEFDE3 /* CALayer+Extension.m in Sources */,
-				78011D3623602DCC00BEFDE3 /* UIView+RoundedCorners.m in Sources */,
 				789B78A022FD562D00C43ADB /* BaseNavigationController.m in Sources */,
 				789B784922FD556400C43ADB /* AppDelegate.m in Sources */,
 				78011D3B23602DCC00BEFDE3 /* UIBarButtonItem+Extension.m in Sources */,
+				7805728E24317ACB008B8B2C /* UIView+CornerAndBorder.m in Sources */,
 				78011D3523602DCC00BEFDE3 /* UIImage+Circle.m in Sources */,
 				78011D3723602DCC00BEFDE3 /* RightImageButton.m in Sources */,
 				78011D4123602DCC00BEFDE3 /* BWUserDefaults.m in Sources */,
 				789B78A122FD562D00C43ADB /* BaseTabBarController.m in Sources */,
-				78011D3923602DCC00BEFDE3 /* UIView+BorderLine.m in Sources */,
 				78011D4D2360334000BEFDE3 /* MBProgressHUD+HBW.m in Sources */,
 				78011D3F23602DCC00BEFDE3 /* UploadParam.m in Sources */,
 				789B789F22FD562D00C43ADB /* BaseViewController.m in Sources */,
