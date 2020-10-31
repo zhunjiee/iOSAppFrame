@@ -110,6 +110,7 @@
 		789B78A222FD5B4C00C43ADB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A3E870242DF71800D809B3 /* NSObject+BWAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BWAlert.h"; sourceTree = "<group>"; };
 		78A3E871242DF71800D809B3 /* NSObject+BWAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BWAlert.m"; sourceTree = "<group>"; };
+		78B003E2254D3F5000051FA9 /* HideNavigationBarProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideNavigationBarProtocol.h; sourceTree = "<group>"; };
 		8367CAD019285D80F68EF4DA /* Pods_ObjcFrame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcFrame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,7 +146,8 @@
 				7805728C24317ACB008B8B2C /* UIView+CornerAndBorder.h */,
 				7805728D24317ACB008B8B2C /* UIView+CornerAndBorder.m */,
 			);
-			path = Category;
+			name = Category;
+			path = ../Utils/Category;
 			sourceTree = "<group>";
 		};
 		78011D2523602DCC00BEFDE3 /* NetworkAPI(网络接口) */ = {
@@ -163,9 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				78011D2823602DCC00BEFDE3 /* UploadParam.h */,
-				78011D2923602DCC00BEFDE3 /* HttpRequest.m */,
-				78011D2A23602DCC00BEFDE3 /* HttpRequest.h */,
 				78011D2B23602DCC00BEFDE3 /* UploadParam.m */,
+				78011D2A23602DCC00BEFDE3 /* HttpRequest.h */,
+				78011D2923602DCC00BEFDE3 /* HttpRequest.m */,
 			);
 			path = HttpRequest;
 			sourceTree = "<group>";
@@ -236,7 +238,7 @@
 			children = (
 				789B788922FD562D00C43ADB /* Base */,
 				789B785D22FD562D00C43ADB /* Classes */,
-				789B787A22FD562D00C43ADB /* Library */,
+				789B787A22FD562D00C43ADB /* Frameworks */,
 				789B788822FD562D00C43ADB /* Utils */,
 				789B787B22FD562D00C43ADB /* Others */,
 				789B784722FD556400C43ADB /* AppDelegate.h */,
@@ -424,17 +426,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		789B787A22FD562D00C43ADB /* Library */ = {
+		789B787A22FD562D00C43ADB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				78011D452360334000BEFDE3 /* MBProgressHUD+HBW */,
 			);
-			path = Library;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		789B787B22FD562D00C43ADB /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				78011D3123602DCC00BEFDE3 /* MJExtensionConfig */,
+				78011D1023602DCC00BEFDE3 /* Category */,
 				78011D442360314300BEFDE3 /* ConstantHeader.h */,
 				789B788722FD562D00C43ADB /* PrefixHeader.pch */,
 			);
@@ -447,8 +451,6 @@
 				78011D4323602EF900BEFDE3 /* CustomButton(自定义按钮) */,
 				78011D2523602DCC00BEFDE3 /* NetworkAPI(网络接口) */,
 				78011D2E23602DCC00BEFDE3 /* BWUserDefaults(缓存) */,
-				78011D3123602DCC00BEFDE3 /* MJExtensionConfig */,
-				78011D1023602DCC00BEFDE3 /* Category */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -470,6 +472,7 @@
 				789B789122FD562D00C43ADB /* BaseTabBarController.m */,
 				789B789022FD562D00C43ADB /* BaseNavigationController.h */,
 				789B788E22FD562D00C43ADB /* BaseNavigationController.m */,
+				78B003E2254D3F5000051FA9 /* HideNavigationBarProtocol.h */,
 				789B789222FD562D00C43ADB /* BaseViewController.h */,
 				789B788C22FD562D00C43ADB /* BaseViewController.m */,
 				789B788F22FD562D00C43ADB /* BaseTableViewController.h */,

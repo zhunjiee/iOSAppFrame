@@ -7,8 +7,9 @@
 //
 
 #import "BaseNavigationController.h"
+#import "HideNavigationBarProtocol.h"
 
-@interface BaseNavigationController () <UIGestureRecognizerDelegate>
+@interface BaseNavigationController () <UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -32,15 +33,24 @@
     
     // 设置手势代理,开启向右滑返回功能
     self.interactivePopGestureRecognizer.delegate = self;
+    
+    // 遵守代理隐藏导航栏
+    self.delegate = self;
 }
 
 
-/**
- 重写push方法实现页面跳转后的各种设置
- 
- @param viewController 目的控制器
- @param animated 是否a带有动画效果
- */
+#pragma mark - 隐藏导航栏
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(nonnull UIViewController *)viewController animated:(BOOL)animated {
+    //如果控制器遵守了 HideNavigationBarProtocol 协议，则需要隐藏导航栏
+    BOOL HideNav = [[viewController class] conformsToProtocol:@protocol(HideNavigationBarProtocol)];
+    //隐藏导航栏后会导致边缘右滑返回的手势失效，需要重新设置一下这个代理
+    self.interactivePopGestureRecognizer.delegate = self;
+    //设置控制器是否要隐藏导航栏
+    [self setNavigationBarHidden:HideNav animated:YES];
+}
+
+#pragma mark - 返回按钮样式
+/// 重写push方法实现页面跳转后的各种设置,如:隐藏TabBar,返回按钮样式等
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 子页面隐藏底部TabBar按钮
     if (self.childViewControllers.count > 0) {
