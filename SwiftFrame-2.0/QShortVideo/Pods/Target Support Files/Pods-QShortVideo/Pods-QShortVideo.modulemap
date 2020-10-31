@@ -1,0 +1,6 @@
+framework module Pods_QShortVideo {
+  umbrella header "Pods-QShortVideo-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -29,12 +29,15 @@
  设置所有item的属性
  */
 - (void)setupTabBarItemAttributes {
+    UITabBar *tabBar = [UITabBar appearance];
     // 解决ios12.1 tabBar 中的图标及文字在pop时出现位置偏移动画的bug
     // 顺便去除 tabBar 的毛玻璃效果，将背景色设置为白色
-    [[UITabBar appearance] setTranslucent:NO];
+    [tabBar setTranslucent:NO];
     // 去除分割线
-    [[UITabBar appearance] setShadowImage:[UIImage new]];
-    [[UITabBar appearance] setBackgroundImage:[UIImage new]];
+    [tabBar setShadowImage:[UIImage new]];
+    [tabBar setBackgroundImage:[UIImage new]];
+    // 设置背景色
+    [tabBar setBarTintColor:[UIColor redColor]];
     
     // 通过appearance统一设置TabBar控制器的文字
     UITabBarItem *item = [UITabBarItem appearance];

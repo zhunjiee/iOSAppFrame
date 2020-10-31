@@ -21,6 +21,8 @@
 
 - (void)initView {
     self.view.backgroundColor = BW_WHITE_COLOR;
+    
+#warning HBDNavigationBar库会导致此处代码不生效
     // view 不被导航栏遮挡
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }

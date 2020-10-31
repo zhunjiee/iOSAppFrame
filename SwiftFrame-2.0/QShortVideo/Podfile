@@ -11,7 +11,7 @@ target 'QShortVideo' do
   pod 'Alamofire', '~> 5.0' #网络请求
   pod 'MBProgressHUD', '~> 1.2.0' #蒙版
   pod 'SVProgressHUD'
-  pod 'SwiftyJSON', '~> 4.0'  #字典转模型
+  pod 'SwiftyJSON', '~> 4.0'
   pod 'SnapKit', '~> 5.0.0' #布局
   
   target 'QShortVideoTests' do

@@ -1,0 +1,6 @@
+framework module Pods_QShortVideoUITests {
+  umbrella header "Pods-QShortVideoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

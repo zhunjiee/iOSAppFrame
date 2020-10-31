@@ -39,13 +39,13 @@ class PlayerViewController: BaseViewController {
         option.setOptionValue(NSNumber(value: 15), forKey: PLPlayerOptionKeyTimeoutIntervalForMediaPackets)
         let urlStr = (url ?? "").lowercased()
         var format = kPLPLAY_FORMAT_UnKnown;
-        if urlStr.hasPrefix("mp4") {
+        if urlStr.hasSuffix("mp4") {
             format = kPLPLAY_FORMAT_MP4
         } else if urlStr .hasPrefix("rtmp:") {
             format = kPLPLAY_FORMAT_FLV
-        } else if urlStr .hasPrefix(".mp3") {
+        } else if urlStr .hasSuffix(".mp3") {
             format = kPLPLAY_FORMAT_MP3
-        } else if urlStr .hasPrefix(".m3u8") {
+        } else if urlStr .hasSuffix(".m3u8") {
             format = kPLPLAY_FORMAT_M3U8
         }
         option.setOptionValue(NSNumber(value: format.rawValue), forKey: PLPlayerOptionKeyVideoPreferFormat)

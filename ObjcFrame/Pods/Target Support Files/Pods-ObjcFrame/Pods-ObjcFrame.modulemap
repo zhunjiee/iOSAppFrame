@@ -1,0 +1,6 @@
+framework module Pods_ObjcFrame {
+  umbrella header "Pods-ObjcFrame-umbrella.h"
+
+  export *
+  module * { export * }
+}
