@@ -23,6 +23,9 @@
 		784D8A7A242C975A00AF8327 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D8A78242C975A00AF8327 /* BaseViewController.swift */; };
 		784D8A7B242C975A00AF8327 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D8A79242C975A00AF8327 /* BaseTableViewController.swift */; };
 		784D8A7D242C97AD00AF8327 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D8A7C242C97AD00AF8327 /* BaseNavigationController.swift */; };
+		78742EEE258C8EFC00FE0052 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78742EED258C8EFC00FE0052 /* ChildView.swift */; };
+		78742EF6258C8F0800FE0052 /* ChildView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78742EF5258C8F0800FE0052 /* ChildView.xib */; };
+		7875CB7C258B3BC100B53963 /* JsonToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7875CB7B258B3BC100B53963 /* JsonToModel.swift */; };
 		78A3E84F242D8D9000D809B3 /* ConstantHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3E840242D8D8F00D809B3 /* ConstantHeader.swift */; };
 		78A3E850242D8D9000D809B3 /* HUDStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3E842242D8D8F00D809B3 /* HUDStyleManager.swift */; };
 		78A3E851242D8D9000D809B3 /* HUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3E843242D8D8F00D809B3 /* HUD+Extension.swift */; };
@@ -88,6 +91,9 @@
 		784D8A78242C975A00AF8327 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		784D8A79242C975A00AF8327 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		784D8A7C242C97AD00AF8327 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		78742EED258C8EFC00FE0052 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		78742EF5258C8F0800FE0052 /* ChildView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildView.xib; sourceTree = "<group>"; };
+		7875CB7B258B3BC100B53963 /* JsonToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonToModel.swift; sourceTree = "<group>"; };
 		78A3E840242D8D8F00D809B3 /* ConstantHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantHeader.swift; sourceTree = "<group>"; };
 		78A3E842242D8D8F00D809B3 /* HUDStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDStyleManager.swift; sourceTree = "<group>"; };
 		78A3E843242D8D8F00D809B3 /* HUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HUD+Extension.swift"; sourceTree = "<group>"; };
@@ -248,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				784D8A65242C95F700AF8327 /* Controller */,
-				784D8A67242C960700AF8327 /* Model */,
 				784D8A66242C960100AF8327 /* View */,
+				784D8A67242C960700AF8327 /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -267,6 +273,8 @@
 		784D8A66242C960100AF8327 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78742EED258C8EFC00FE0052 /* ChildView.swift */,
+				78742EF5258C8F0800FE0052 /* ChildView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,6 +428,7 @@
 				78A3E841242D8D8F00D809B3 /* MBProgressHUD+Extension */,
 				78A3E84E242D8D9000D809B3 /* BWUserDefaults.swift */,
 				78BEE6E924330CD50005B694 /* HudStyleManager.swift */,
+				7875CB7B258B3BC100B53963 /* JsonToModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -589,6 +598,7 @@
 				78A3E86D242DC75E00D809B3 /* MineViewController.xib in Resources */,
 				78A3E869242DC75000D809B3 /* ZoneViewController.xib in Resources */,
 				78A3E85D242DC71E00D809B3 /* HomeViewController.xib in Resources */,
+				78742EF6258C8F0800FE0052 /* ChildView.xib in Resources */,
 				78A3E861242DC73000D809B3 /* AppViewController.xib in Resources */,
 				78A3E865242DC74100D809B3 /* AddViewController.xib in Resources */,
 				78A3E852242D8D9000D809B3 /* Resource.bundle in Resources */,
@@ -707,6 +717,7 @@
 				784D8A7D242C97AD00AF8327 /* BaseNavigationController.swift in Sources */,
 				780572922431C886008B8B2C /* PlayerViewController.swift in Sources */,
 				78BEE6D82432E33B0005B694 /* UploadFileConfig.swift in Sources */,
+				78742EEE258C8EFC00FE0052 /* ChildView.swift in Sources */,
 				7828743824468E0300CF978C /* TestModel.swift in Sources */,
 				78A3E84F242D8D9000D809B3 /* ConstantHeader.swift in Sources */,
 				784D8A7A242C975A00AF8327 /* BaseViewController.swift in Sources */,
@@ -724,6 +735,7 @@
 				78A3E855242D8D9000D809B3 /* NetworkHeader.swift in Sources */,
 				78A3E875242DF96C00D809B3 /* NSObject+Alert.swift in Sources */,
 				784D89EE242C5AA400AF8327 /* AppDelegate.swift in Sources */,
+				7875CB7C258B3BC100B53963 /* JsonToModel.swift in Sources */,
 				78A3E857242D8D9000D809B3 /* UIView+Frame.swift in Sources */,
 				78A3E856242D8D9000D809B3 /* UIImage+Circle.swift in Sources */,
 				78A3E850242D8D9000D809B3 /* HUDStyleManager.swift in Sources */,

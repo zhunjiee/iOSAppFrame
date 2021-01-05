@@ -22,6 +22,11 @@
 - (void)initView {
     self.tableView.backgroundColor =  BACKGROUND_COLOR;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.tableFooterView = [[UIView alloc] init];
+}
+
+- (void)popViewController {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

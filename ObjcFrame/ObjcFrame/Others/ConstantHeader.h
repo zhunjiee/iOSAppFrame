@@ -9,9 +9,12 @@
 #ifndef ConstantHeader_h
 #define ConstantHeader_h
 
-/*
- * 缓存key
- */
+#pragma mark - 三方库
+// 极光推送
+#define JPushKey @"2fc2a3c22590b3882c896b74"
+
+
+#pragma mark - 缓存key
 // 登录状态
 #define UserLoginState @"UserLoginState"
 // token
@@ -31,15 +34,16 @@
 #define UserLocationLongitude @"UserLocationLongitude"
 #define UserLocationLatitude @"UserLocationLatitude"
 
-/*
- * 通知key
- */
+
+#pragma mark - 通知key
 // 登录成功
 #define LoginSuccessNotification @"LoginSuccessNotification"
 // 退出登录成功
 #define LogoutSuccessNotification @"LogoutSuccessNotification"
 // token失效
 #define TokenLoseEfficacyNotification @"TokenLoseEfficacyNotification"
+// 网络状态改变
+#define NetworkStatusChangeNotification @"NetworkStatusChangeNotification"
 
 
 #endif /* ConstantHeader_h */

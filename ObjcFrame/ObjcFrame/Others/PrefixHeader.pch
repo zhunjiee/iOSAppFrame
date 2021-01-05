@@ -11,6 +11,7 @@
 
 #import <AFNetworking/AFNetworking.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <SVProgressHUD.h>
 #import <MJExtension/MJExtension.h>
 #import <MJRefresh/MJRefresh.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
@@ -18,29 +19,68 @@
 #import <SDWebImage/SDWebImage.h>
 #import <XHLaunchAd/XHLaunchAd.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>
+
 #import "UIBarButtonItem+Extension.h"     // 自定义TabBarItem
 #import "UIViewController+Extension.h"     // 获取状态栏/导航栏/TabBar的高度等
 #import "UIView+Frame.h"        // frame简写
-#import "UIImage+Circle.h"      // 圆形图片
 #import "UIView+CornerAndBorder.h"       // 圆角及边框
 #import "UIView+Extension.h"       // 当前控制器等
 #import "CALayer+Extension.h"       // xib添加运行时属性设置borderColor
+#import "NSString+Extension.h"
+#import "UIColor+Hex.h"
+#import "UITableView+NoData.h"
+#import "UICollectionView+NoData.h"
+#import "UIButton+Utils.h"
+#import "UILabel+Utils.h"
+#import "UIImage+Util.h"
+#import "UIImage+Circle.h"      // 圆形图片
+#import "NSData+Compress.h"
+#import "UITextView+Placeholder.h"
+
 #import "ConstantHeader.h"      // 常量
 #import "MBProgressHUD+HBW.h"
 #import "BWUserDefaults.h"
 #import "NetworkManager.h"
 
 
-// 字符串是否为空
-#define BWStringIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO)
-// 空字符串返回处理
-#define BWCheckString(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? @"" : str)
-
+#pragma mark - 尺寸相关
 // 屏幕尺寸
-#define BWScreenW [UIScreen mainScreen].bounds.size.width
-#define BWScreenH [UIScreen mainScreen].bounds.size.height
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
-// 颜色相关
+// 是否为刘海屏机型
+#define kIsBangsScreen ({\
+    BOOL isBangsScreen = NO; \
+    if (@available(iOS 11.0, *)) { \
+        UIWindow *window = [[UIApplication sharedApplication].windows firstObject]; \
+        isBangsScreen = window.safeAreaInsets.bottom > 0; \
+    } \
+    isBangsScreen; \
+})
+// 状态栏高度
+#define StatusBarHeight (CGFloat)(kIsBangsScreen?(44.0):(20.0))
+// 导航栏高度
+#define NavBarHeight (44)
+// 状态栏和导航栏总高度
+#define NavBarAndStatusBarHeight (CGFloat)(kIsBangsScreen?(88.0):(64.0))
+// TabBar高度
+#define TabBarHeight (CGFloat)(kIsBangsScreen?(49.0 + 34.0):(49.0))
+// 顶部安全区域远离高度
+#define TopBarSafeHeight (CGFloat)(kIsBangsScreen?(44.0):(0))
+// 底部安全区域远离高度
+#define BottomSafeHeight (CGFloat)(kIsBangsScreen?(34.0):(0))
+// iPhoneX的状态栏高度差值
+#define TopBarDifHeight (CGFloat)(kIsBangsScreen?(24.0):(0))
+// 导航条和Tabbar总高度
+#define NavAndTabHeight (NavBarAndStatusBarHeight + TabBarHeight)
+// 控制器View区域去除导航栏和底部TbaBar后的高度
+#define ControllerViewHeight (ScreenHeight - NavAndTabHeight)
+// 控制器View区域去除导航栏后的高度
+#define ControllerViewNoNavBarHeight (ScreenHeight - NavBarAndStatusBarHeight)
+
+
+#pragma mark - 颜色相关
+// 颜色
 #define BWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define BWAlphaColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/1.0]
 // 白色
@@ -62,7 +102,14 @@
 // 亮灰色
 #define LIGHT_GRAY_COLOR BWColor(153, 153, 153)
 
+
+#pragma mark - 常用方法
+// 字符串是否为空
+#define BWStringIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO)
+// 空字符串返回处理
+#define BWCheckString(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? @"" : str)
 // self的弱引用
 #define BWeakSelf __weak typeof(self) weakSelf = self;
+
 
 #endif /* MengTianXia_pch */

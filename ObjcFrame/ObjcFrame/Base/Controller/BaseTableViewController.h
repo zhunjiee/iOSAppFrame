@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseTableViewController : UITableViewController
-
+/// 退出当前控制器
+- (void)popViewController;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -25,7 +25,10 @@ class HomeViewController: BaseViewController {
         
         playerVC.url = "http://demo-videos.qnsdk.com/shortvideo/super.mp4"
         view.addSubview(playerVC.view)
-
+    }
+    
+    @objc func switchTypeBtnDidClick(button: UIButton) {
+        print("hahahha")
     }
     
     override func viewWillAppear(_ animated: Bool) {

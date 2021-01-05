@@ -19,7 +19,7 @@
     UINavigationBar *bar = [UINavigationBar appearance];
     // 去除导航栏的毛玻璃效果
     bar.translucent = NO;
-    [bar setBackgroundImage:[UIImage new]  forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [bar setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     // 隐藏导航栏底部分割线
     [bar setShadowImage:[UIImage new]];
     // 设置标题文字

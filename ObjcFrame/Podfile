@@ -6,14 +6,16 @@ target 'ObjcFrame' do
   use_frameworks!
 
   # Pods for ObjcFrame
-  pod 'AFNetworking', '~> 3.0'
-  pod 'MBProgressHUD', '~> 1.1.0' # HUD
+  pod 'AFNetworking'
+  pod 'MBProgressHUD' # HUD
+  pod 'SVProgressHUD' # HUD
   pod 'IQKeyboardManager' # 键盘
   pod 'SDWebImage'
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'Masonry' # 布局
-  pod 'SDCycleScrollView','>= 1.80' # 轮播图
+  pod 'SDCycleScrollView' # 轮播图
   pod 'XHLaunchAd'  # 启动页广告图
+  pod 'JPush'  # 极光推送
 
 end

@@ -28,4 +28,10 @@
     self.shadowColor = color.CGColor;
 }
 
+/// 设置背景颜色
+/// @param color UIColor
+- (void)setBackgroundColorFromUIColor:(UIColor *)color {
+    self.backgroundColor = color.CGColor;
+}
+
 @end

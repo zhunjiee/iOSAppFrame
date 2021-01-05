@@ -8,15 +8,41 @@
 
 import UIKit
 
+/// 判断是不是刘海屏
+func isBangsScreen() -> Bool {
+    var isBangsScreen = false
+    if #available(iOS 11.0, *) {
+        let window = UIApplication.shared.windows.first
+        isBangsScreen = (window?.safeAreaInsets.bottom ?? 0.0) > 0
+    }
+    return isBangsScreen
+}
+
+
 /// 屏幕尺寸
-let BWScreenW = UIScreen.main.bounds.width
-let BWScreenH = UIScreen.main.bounds.height
+let ScreenWidth = UIScreen.main.bounds.width
+let ScreenHeight = UIScreen.main.bounds.height
+
 // 状态栏的高度
 let BWStatusBarHeight = UIApplication.shared.statusBarFrame.size.height
 // 导航栏高度
-let BWNavHeight = 44
-// TabBar的高度
-let BWTabBarHeight = 49
+let NavBarHeight: CGFloat = 44.0
+// 状态栏和导航栏总高度
+let NavBarAndStatusBarHeight: CGFloat = isBangsScreen() ? 88.0 : 64.0
+// TabBar高度
+let TabBarHeight: CGFloat = isBangsScreen() ? 49.0 + 34.0 : 49.0
+// 顶部安全区域远离高度
+let TopBarSafeHeight: CGFloat = isBangsScreen() ? 44.0 : 0.0
+// 底部安全区域远离高度
+let BottomSafeHeight: CGFloat = isBangsScreen() ? 34.0 : 0.0
+// iPhoneX的状态栏高度差值
+let TopBarDifHeight: CGFloat = isBangsScreen() ? 24.0 : 0.0
+// 导航条和Tabbar总高度
+let NavAndTabHeight = NavBarAndStatusBarHeight + TabBarHeight
+// 控制器View区域去除导航栏和底部TbaBar后的高度
+let ControllerViewHeight: CGFloat = ScreenHeight - NavAndTabHeight
+// 控制器View区域去除导航栏后的高度
+let ControllerViewNoNavBarHeight: CGFloat = ScreenHeight - NavBarAndStatusBarHeight
 
 /// 颜色相关
 func BWColor(_ r: Int, _ g: Int, _ b: Int) -> UIColor {

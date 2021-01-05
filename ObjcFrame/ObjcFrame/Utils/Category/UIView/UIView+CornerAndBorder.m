@@ -8,9 +8,6 @@
 
 #import "UIView+CornerAndBorder.h"
 
-#import <AppKit/AppKit.h>
-
-
 @implementation UIView (CornerAndBorder)
 
 #pragma mark - 圆角

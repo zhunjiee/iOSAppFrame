@@ -19,25 +19,25 @@ static id _instance = nil;
     return _instance;
 }
 
-+(instancetype)sharedInstance{
++ (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[self alloc] init];
-        [_instance defaultStyle];
+        [_instance customDefaultStyle];
     });
     return _instance;
 }
 
-- (id)copyWithZone:(NSZone *)zone{
+- (id)copyWithZone:(NSZone *)zone {
     return _instance;
 }
 
--(id)mutableCopyWithZone:(NSZone *)zone {
+- (id)mutableCopyWithZone:(NSZone *)zone {
     return _instance;
 }
 
 // hud的默认样式
-- (void)defaultStyle {
+- (void)customDefaultStyle {
     self.hudStyle = DimBackgroundStyle;
     self.hudShowTime = 2.0;
 }
