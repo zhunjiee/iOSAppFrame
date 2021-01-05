@@ -20,11 +20,12 @@ static NSString * const CellReusedID = @"cell";
 
     [self setupNavigationBar];
     [self registerTableViewCell];
+    
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 - (void)setupNavigationBar {
     self.title = @"消息";
-    self.tableView.backgroundColor = [UIColor redColor];
 }
 
 - (void)registerTableViewCell {
@@ -32,7 +33,7 @@ static NSString * const CellReusedID = @"cell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 30;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

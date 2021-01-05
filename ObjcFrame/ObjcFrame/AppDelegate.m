@@ -10,6 +10,7 @@
 #import "BaseTabBarController.h"
 #import "BaseNavigationController.h"
 #import "BaseWebViewController.h"
+#import "DrawerViewController.h"
 // 引入 JPush 功能所需头文件
 #import "JPUSHService.h"
 // iOS10 注册 APNs 所需头文件
@@ -28,7 +29,6 @@
     [self setupRootViewController];
     [self setupThirdFrameworks];
     [self registerJPushServiceWithOption:launchOptions];
-    [self monitorNetworkStatus];
     [self skipToAdLaunchView];
     return YES;
 }
@@ -39,7 +39,11 @@
  */
 - (void)setupRootViewController {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    BaseTabBarController *rootController = [[BaseTabBarController alloc] init];
+    // 普通tabBar控制器
+//    BaseTabBarController *rootController = [[BaseTabBarController alloc] init];
+    // 抽屉效果控制器
+    DrawerViewController *rootController = [[DrawerViewController alloc] init];
+//    rootController.type = DrawerTypeLeft;
     self.window.rootViewController = rootController;
     [self.window makeKeyAndVisible];
 }
@@ -57,16 +61,18 @@
 }
 
 #pragma mark - AD广告页
-
 /// 跳转到广告页
 - (void)skipToAdLaunchView {
-    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
+    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
     [XHLaunchAd setWaitDataDuration:3];
     //配置广告数据
     XHLaunchImageAdConfiguration *imageAdconfiguration = [[XHLaunchImageAdConfiguration alloc] init];
     imageAdconfiguration.duration = 3;
     imageAdconfiguration.frame = self.window.bounds;
-    imageAdconfiguration.imageNameOrURLString = @"https://gitee.com/zhunjiee/picture-bed/raw/master/iOS/%E5%90%AF%E5%8A%A8%E9%A1%B5.png";
+    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+//    imageAdconfiguration.imageNameOrURLString = @"https://gitee.com/zhunjiee/picture-bed/raw/master/iOS/ad_image.png";
+    // 注：加载本地图片不要放在Assets中
+    imageAdconfiguration.imageNameOrURLString = @"ad_image.png";
     //为了展示效果更好,可设置为XHLaunchAdImageCacheInBackground,先缓存,下次显示
     imageAdconfiguration.imageOption = XHLaunchAdImageCacheInBackground;
     imageAdconfiguration.contentMode = UIViewContentModeScaleToFill;
@@ -213,31 +219,6 @@
         }
     }
     return YES;
-}
-
-#pragma mark - 监测网络环境
-
-- (void)monitorNetworkStatus {
-    [[HttpRequest sharedInstance] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        AFNetworkReachabilityStatus networkStatus = AFNetworkReachabilityStatusUnknown;
-        
-        // 网络状态改变
-        if (networkStatus != status) {
-            // 发送网络状态改变的通知
-            [[NSNotificationCenter defaultCenter] postNotificationName:NetworkStatusChangeNotification object:nil userInfo:@{
-                @"status" : @(status),
-            }];
-            networkStatus = status;
-        }
-        
-        if (status == AFNetworkReachabilityStatusNotReachable) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"无法联网" message:@"当前无法连接到网络,请检查您的网络连接状态" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-            [alertController addAction:confirm];
-            [[[[UIApplication sharedApplication].windows lastObject] rootViewController] presentViewController:alertController animated:YES completion:nil];
-            
-        }
-    }];
 }
 
 @end

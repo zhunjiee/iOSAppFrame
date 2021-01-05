@@ -51,6 +51,11 @@
 		78A9E90425A3F594002934A7 /* NSData+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E90225A3F593002934A7 /* NSData+Compress.m */; };
 		78A9E90A25A3F6D2002934A7 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E90925A3F6D2002934A7 /* UITextView+Placeholder.m */; };
 		78A9E93C25A3FD8E002934A7 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E93B25A3FD8E002934A7 /* BaseWebViewController.m */; };
+		78A9E94925A40F71002934A7 /* ad_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A9E94825A40F71002934A7 /* ad_image.png */; };
+		78A9E95125A446F9002934A7 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E95025A446F9002934A7 /* DrawerViewController.m */; };
+		78A9E95625A4478A002934A7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E95525A4478A002934A7 /* MainViewController.m */; };
+		78A9E95A25A4479B002934A7 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E95925A4479B002934A7 /* LeftViewController.m */; };
+		78A9E95E25A447AA002934A7 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E95D25A447AA002934A7 /* RightViewController.m */; };
 		D13094E58B1EE51860CA2D94 /* Pods_ObjcFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8367CAD019285D80F68EF4DA /* Pods_ObjcFrame.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +151,15 @@
 		78A9E90925A3F6D2002934A7 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		78A9E93A25A3FD8E002934A7 /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
 		78A9E93B25A3FD8E002934A7 /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		78A9E94825A40F71002934A7 /* ad_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad_image.png; sourceTree = "<group>"; };
+		78A9E94F25A446F9002934A7 /* DrawerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		78A9E95025A446F9002934A7 /* DrawerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		78A9E95425A4478A002934A7 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		78A9E95525A4478A002934A7 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		78A9E95825A4479B002934A7 /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		78A9E95925A4479B002934A7 /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		78A9E95C25A447AA002934A7 /* RightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
+		78A9E95D25A447AA002934A7 /* RightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		78B003E2254D3F5000051FA9 /* HideNavigationBarProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideNavigationBarProtocol.h; sourceTree = "<group>"; };
 		8367CAD019285D80F68EF4DA /* Pods_ObjcFrame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcFrame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -285,9 +299,11 @@
 		789B784622FD556400C43ADB /* ObjcFrame */ = {
 			isa = PBXGroup;
 			children = (
+				78A9E94E25A446BC002934A7 /* Drawer */,
 				789B788922FD562D00C43ADB /* Base */,
 				789B785D22FD562D00C43ADB /* Classes */,
 				789B787A22FD562D00C43ADB /* Frameworks */,
+				78A9E93F25A40EBF002934A7 /* Sources */,
 				789B788822FD562D00C43ADB /* Utils */,
 				789B787B22FD562D00C43ADB /* Others */,
 				789B784722FD556400C43ADB /* AppDelegate.h */,
@@ -613,6 +629,29 @@
 			path = UIBarButtonItem;
 			sourceTree = "<group>";
 		};
+		78A9E93F25A40EBF002934A7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				78A9E94825A40F71002934A7 /* ad_image.png */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		78A9E94E25A446BC002934A7 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				78A9E94F25A446F9002934A7 /* DrawerViewController.h */,
+				78A9E95025A446F9002934A7 /* DrawerViewController.m */,
+				78A9E95425A4478A002934A7 /* MainViewController.h */,
+				78A9E95525A4478A002934A7 /* MainViewController.m */,
+				78A9E95825A4479B002934A7 /* LeftViewController.h */,
+				78A9E95925A4479B002934A7 /* LeftViewController.m */,
+				78A9E95C25A447AA002934A7 /* RightViewController.h */,
+				78A9E95D25A447AA002934A7 /* RightViewController.m */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
 		915441286683A96B1947CF48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +730,7 @@
 			files = (
 				78011D4C2360334000BEFDE3 /* Resource.bundle in Resources */,
 				789B785122FD556500C43ADB /* Assets.xcassets in Resources */,
+				78A9E94925A40F71002934A7 /* ad_image.png in Resources */,
 				789B78A322FD5B4C00C43ADB /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +789,7 @@
 				789B789622FD562D00C43ADB /* MemberViewController.m in Sources */,
 				789B789722FD562D00C43ADB /* MessageViewController.m in Sources */,
 				789B785722FD556500C43ADB /* main.m in Sources */,
+				78A9E95E25A447AA002934A7 /* RightViewController.m in Sources */,
 				785D0A892360380600C61F31 /* BaseCollectionViewController.m in Sources */,
 				78011D3C23602DCC00BEFDE3 /* TopImageButton.m in Sources */,
 				78011D502360342200BEFDE3 /* BWLoadingStyleManager.m in Sources */,
@@ -768,6 +809,7 @@
 				789B784922FD556400C43ADB /* AppDelegate.m in Sources */,
 				788067822554E7A7005A181D /* BWSearchBarView.m in Sources */,
 				78A9E90A25A3F6D2002934A7 /* UITextView+Placeholder.m in Sources */,
+				78A9E95625A4478A002934A7 /* MainViewController.m in Sources */,
 				78A9E8E925A3F26B002934A7 /* UIColor+Hex.m in Sources */,
 				78011D3B23602DCC00BEFDE3 /* UIBarButtonItem+Extension.m in Sources */,
 				78A9E90425A3F594002934A7 /* NSData+Compress.m in Sources */,
@@ -783,6 +825,8 @@
 				78A9E93C25A3FD8E002934A7 /* BaseWebViewController.m in Sources */,
 				789B789522FD562D00C43ADB /* HomeViewController.m in Sources */,
 				78A9E8F625A3F3DB002934A7 /* UIButton+Utils.m in Sources */,
+				78A9E95125A446F9002934A7 /* DrawerViewController.m in Sources */,
+				78A9E95A25A4479B002934A7 /* LeftViewController.m in Sources */,
 				789B789E22FD562D00C43ADB /* BaseTableViewController.m in Sources */,
 				78011D3A23602DCC00BEFDE3 /* BWCustomButton.m in Sources */,
 			);

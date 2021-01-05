@@ -37,7 +37,7 @@
     [tabBar setShadowImage:[UIImage new]];
     [tabBar setBackgroundImage:[UIImage new]];
     // 设置背景色
-    [tabBar setBarTintColor:[UIColor redColor]];
+    [tabBar setBarTintColor:[UIColor whiteColor]];
     
     // 通过appearance统一设置TabBar控制器的文字
     UITabBarItem *item = [UITabBarItem appearance];

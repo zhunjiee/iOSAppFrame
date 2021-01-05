@@ -12,6 +12,7 @@
 
 - (void)showNoDataViewWithType:(NoDataType)type {
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    backgroundView.backgroundColor = [UIColor whiteColor];
     
     UIImageView *showImageView = [[UIImageView alloc] init];
     showImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -35,6 +36,7 @@
         @"暂无内容",
         @"暂无任务",
     ];
+
     showImageView.image = [UIImage imageNamed:imageArray[type]];
     tipLabel.text = textArray[type];
     

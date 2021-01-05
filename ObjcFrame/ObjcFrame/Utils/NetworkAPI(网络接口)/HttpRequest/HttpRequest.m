@@ -323,24 +323,24 @@ static id _instance = nil;
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     [manager startMonitoring];
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        switch (status) {
-                // 未知网络
-            case AFNetworkReachabilityStatusUnknown:
-                NSLog(@"未知网络");
-                break;
-                // 没有网络
-            case AFNetworkReachabilityStatusNotReachable:
-                NSLog(@"没有网络");
-                break;
-                // 手机自带网络
-            case AFNetworkReachabilityStatusReachableViaWWAN:
-                NSLog(@"当前使用的是2G/3G/4G网络");
-                break;
-                // WIFI
-            case AFNetworkReachabilityStatusReachableViaWiFi:
-                NSLog(@"当前在WIFI网络下");
-                break;
-        }
+//        switch (status) {
+//                // 未知网络
+//            case AFNetworkReachabilityStatusUnknown:
+//                NSLog(@"未知网络");
+//                break;
+//                // 没有网络
+//            case AFNetworkReachabilityStatusNotReachable:
+//                NSLog(@"没有网络");
+//                break;
+//                // 手机自带网络
+//            case AFNetworkReachabilityStatusReachableViaWWAN:
+//                NSLog(@"当前使用的是2G/3G/4G网络");
+//                break;
+//                // WIFI
+//            case AFNetworkReachabilityStatusReachableViaWiFi:
+//                NSLog(@"当前在WIFI网络下");
+//                break;
+//        }
         if (block) {
             block(status);
         }
