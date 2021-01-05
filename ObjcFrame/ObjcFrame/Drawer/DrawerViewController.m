@@ -8,9 +8,10 @@
 
 #import "DrawerViewController.h"
 #import "BaseNavigationController.h"
-#import "MainViewController.h"
-#import "LeftViewController.h"
-#import "RightViewController.h"
+
+#define targetRightX 240    // 左侧视图宽度
+#define targetLeftX -180    // 右侧视图宽度
+#define maxY 100            // 影响缩放
 
 @interface DrawerViewController ()
 @property (strong, nonatomic) UIView *mainView;     // 主视图
@@ -19,7 +20,7 @@
 @end
 
 @implementation DrawerViewController
-
+#pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,42 +34,50 @@
 }
 
 - (void)addChildViewControllers {
+    // 左侧菜单控制器
+    LeftViewController *leftVC = [[LeftViewController alloc] init];
+    leftVC.view.frame = self.view.bounds;
+    leftVC.leftMenuViewClickBlock = ^(NSInteger index) {
+        NSLog(@"选中第%ld行", (long)index);
+        [self resetMainViewFrame];
+    };
+    // 右侧消息控制器
+    RightViewController *rightVC = [[RightViewController alloc] init];
+    rightVC.view.frame = self.view.bounds;
+    
     if (self.type == DrawerTypeLeft) {
-        LeftViewController *leftVC = [[LeftViewController alloc] init];
         [self addChildViewController:leftVC];
-        leftVC.view.frame = self.view.bounds;
         [self.view addSubview:leftVC.view];
         self.leftView = leftVC.view;
         
     } else if (self.type == DrawerTypeRight) {
-        RightViewController *rightVC = [[RightViewController alloc] init];
         [self addChildViewController:rightVC];
-        rightVC.view.frame = self.view.bounds;
         [self.view addSubview:rightVC.view];
         self.rightView = rightVC.view;
         
     } else {
-        LeftViewController *leftVC = [[LeftViewController alloc] init];
         [self addChildViewController:leftVC];
-        leftVC.view.frame = self.view.bounds;
         [self.view addSubview:leftVC.view];
         self.leftView = leftVC.view;
-        
-        RightViewController *rightVC = [[RightViewController alloc] init];
+
         [self addChildViewController:rightVC];
-        rightVC.view.frame = self.view.bounds;
         [self.view addSubview:rightVC.view];
         self.rightView = rightVC.view;
     }
     
     MainViewController *mainVC = [[MainViewController alloc] init];
+    mainVC.type = self.type;
     mainVC.view.frame = CGRectMake(0, 0, ScreenWidth, ControllerViewNoNavBarHeight);
-    mainVC.mainVcMenuNavBtnDidClick = ^(UIButton * _Nonnull button) {
-        [self mainViewScrollingIsRightDrawer:NO];
+    mainVC.leftNavImageName = self.leftNavImageName;
+    mainVC.rightNavImageName = self.rightNavImageName;
+    // 导航栏点击事件
+    mainVC.mainVcMenuNavBtnClickBlock = ^(UIButton * _Nonnull button) {
+        [self mainViewAnimatingWithIsRightDrawer:NO];
     };
-    mainVC.mainVcMessageNavBtnDidClick = ^(UIButton * _Nonnull button) {
-        [self mainViewScrollingIsRightDrawer:YES];
+    mainVC.mainVcMessageNavBtnClickBlock = ^(UIButton * _Nonnull button) {
+        [self mainViewAnimatingWithIsRightDrawer:YES];
     };
+    
     BaseNavigationController *mainNav = [[BaseNavigationController alloc] initWithRootViewController:mainVC];
     [self addChildViewController:mainNav];
     [self.view addSubview:mainNav.view];
@@ -83,7 +92,7 @@
     
     // 添加单击手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-    [self.view addGestureRecognizer:tap];
+    [self.mainView addGestureRecognizer:tap];
 }
 
 #pragma mark - 事件监听
@@ -98,13 +107,9 @@
 
 /// 点击屏幕时复位
 - (void)tap:(UITapGestureRecognizer *)tap {
-    [UIView animateWithDuration:0.3 animations:^{
-        self.mainView.frame = self.view.bounds;
-    }];
+    [self resetMainViewFrame];
 }
 
-#define targetRightX 240
-#define targetLeftX -180
 - (void)pan:(UIPanGestureRecognizer *)pan {
     // 获取手指偏移量
     CGFloat offsetX = [pan translationInView:self.mainView].x;
@@ -130,7 +135,6 @@
         
         if (self.mainView.frame.origin.x > ScreenWidth * 0.5) {
             target = targetRightX;
-            
         } else if (CGRectGetMaxX(self.mainView.frame) < ScreenWidth * 0.5) {
             target = targetLeftX;
         }
@@ -145,8 +149,16 @@
     }
 }
 
-/// 点击导航栏-自动滚动到相应位置
-- (void)mainViewScrollingIsRightDrawer:(BOOL)isRightDrawer {
+#pragma mark - 私有方法
+/// 视图复位
+- (void)resetMainViewFrame {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.mainView.frame = self.view.bounds;
+    }];
+}
+
+/// 点击导航栏按钮 - 自动滚动到相应位置
+- (void)mainViewAnimatingWithIsRightDrawer:(BOOL)isRightDrawer {
     CGFloat target = 0;
     
     if (isRightDrawer) {
@@ -163,7 +175,6 @@
     }];
 }
 
-#define maxY 100
 /// 计算 缩放效果 frame
 - (CGRect)frameWithOffsetX:(CGFloat)offsetX{
     CGRect tempFrame = self.mainView.frame;

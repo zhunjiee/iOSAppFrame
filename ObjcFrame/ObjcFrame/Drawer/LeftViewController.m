@@ -13,21 +13,39 @@
 @end
 
 @implementation LeftViewController
+static NSString * const CellReusedID = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor greenColor];
+
+    [self setupNavigationBar];
+    [self registerTableViewCell];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupNavigationBar {
+    self.title = @"消息";
 }
-*/
+
+- (void)registerTableViewCell {
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReusedID];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReusedID];
+    cell.textLabel.text = [NSString stringWithFormat:@"第%ld行", (long)indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (self.leftMenuViewClickBlock) {
+        self.leftMenuViewClickBlock(indexPath.row);
+    }
+}
 
 @end

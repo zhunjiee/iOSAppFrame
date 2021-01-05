@@ -26,7 +26,6 @@
 #import "UIView+CornerAndBorder.h"       // 圆角及边框
 #import "UIView+Extension.h"       // 当前控制器等
 #import "CALayer+Extension.h"       // xib添加运行时属性设置borderColor
-#import "NSString+Extension.h"
 #import "UIColor+Hex.h"
 #import "UITableView+NoData.h"
 #import "UICollectionView+NoData.h"

@@ -6,12 +6,12 @@
 //  Copyright © 2021 ZHUNJIEE. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LeftViewController : BaseViewController
-
+@interface LeftViewController : BaseTableViewController
+@property (copy, nonatomic) void (^leftMenuViewClickBlock)(NSInteger index);     // 点击菜单视图cell
 @end
 
 NS_ASSUME_NONNULL_END

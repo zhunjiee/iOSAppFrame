@@ -7,17 +7,16 @@
 //
 
 #import "BaseViewController.h"
+#import "MainViewController.h"
+#import "LeftViewController.h"
+#import "RightViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, DrawerType) {
-    DrawerTypeDefault,  // 左右都显示
-    DrawerTypeLeft,     // 只显示左边
-    DrawerTypeRight,    // 只显示右边
-};
-
 @interface DrawerViewController : BaseViewController
 @property (assign, nonatomic) DrawerType type;              // 抽屉类型
+@property (copy, nonatomic) NSString *leftNavImageName;
+@property (copy, nonatomic) NSString *rightNavImageName;
 @end
 
 NS_ASSUME_NONNULL_END

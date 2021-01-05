@@ -41,7 +41,6 @@
 		789B78A122FD562D00C43ADB /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B789122FD562D00C43ADB /* BaseTabBarController.m */; };
 		789B78A322FD5B4C00C43ADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789B78A222FD5B4C00C43ADB /* LaunchScreen.storyboard */; };
 		78A3E872242DF71800D809B3 /* NSObject+BWAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A3E871242DF71800D809B3 /* NSObject+BWAlert.m */; };
-		78A9E8E525A3EF41002934A7 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E8E425A3EF41002934A7 /* NSString+Extension.m */; };
 		78A9E8E925A3F26B002934A7 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E8E825A3F26B002934A7 /* UIColor+Hex.m */; };
 		78A9E8EF25A3F2E5002934A7 /* UICollectionView+NoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E8EB25A3F2E4002934A7 /* UICollectionView+NoData.m */; };
 		78A9E8F025A3F2E5002934A7 /* UITableView+NoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E8EE25A3F2E5002934A7 /* UITableView+NoData.m */; };
@@ -131,8 +130,6 @@
 		789B78A222FD5B4C00C43ADB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A3E870242DF71800D809B3 /* NSObject+BWAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BWAlert.h"; sourceTree = "<group>"; };
 		78A3E871242DF71800D809B3 /* NSObject+BWAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BWAlert.m"; sourceTree = "<group>"; };
-		78A9E8E325A3EF41002934A7 /* NSString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
-		78A9E8E425A3EF41002934A7 /* NSString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		78A9E8E725A3F26A002934A7 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		78A9E8E825A3F26B002934A7 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		78A9E8EB25A3F2E4002934A7 /* UICollectionView+NoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+NoData.m"; sourceTree = "<group>"; };
@@ -193,8 +190,6 @@
 				78011D1C23602DCC00BEFDE3 /* UIViewController+Extension.m */,
 				78011D1923602DCC00BEFDE3 /* CALayer+Extension.h */,
 				78011D2423602DCC00BEFDE3 /* CALayer+Extension.m */,
-				78A9E8E325A3EF41002934A7 /* NSString+Extension.h */,
-				78A9E8E425A3EF41002934A7 /* NSString+Extension.m */,
 				78A9E8EC25A3F2E4002934A7 /* UITableView+NoData.h */,
 				78A9E8EE25A3F2E5002934A7 /* UITableView+NoData.m */,
 				78A9E8ED25A3F2E4002934A7 /* UICollectionView+NoData.h */,
@@ -802,7 +797,6 @@
 				78011D3823602DCC00BEFDE3 /* UIViewController+Extension.m in Sources */,
 				78011D3E23602DCC00BEFDE3 /* HttpRequest.m in Sources */,
 				78011D3D23602DCC00BEFDE3 /* CALayer+Extension.m in Sources */,
-				78A9E8E525A3EF41002934A7 /* NSString+Extension.m in Sources */,
 				789B78A022FD562D00C43ADB /* BaseNavigationController.m in Sources */,
 				78A9E90025A3F523002934A7 /* UIImage+Util.m in Sources */,
 				78A9E8F025A3F2E5002934A7 /* UITableView+NoData.m in Sources */,
