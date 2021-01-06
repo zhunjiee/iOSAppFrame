@@ -43,7 +43,8 @@
 //    BaseTabBarController *rootController = [[BaseTabBarController alloc] init];
     // 抽屉效果控制器
     DrawerViewController *rootController = [[DrawerViewController alloc] init];
-//    rootController.type = DrawerTypeLeft;
+    rootController.type = DrawerTypeLeft;
+    rootController.rightNavImageName = @"message_nav_icon";
     self.window.rootViewController = rootController;
     [self.window makeKeyAndVisible];
 }

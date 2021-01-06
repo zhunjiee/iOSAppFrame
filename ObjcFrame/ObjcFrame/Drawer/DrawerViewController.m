@@ -66,8 +66,8 @@
     }
     
     MainViewController *mainVC = [[MainViewController alloc] init];
-    mainVC.type = self.type;
     mainVC.view.frame = CGRectMake(0, 0, ScreenWidth, ControllerViewNoNavBarHeight);
+    mainVC.type = self.type;
     mainVC.leftNavImageName = self.leftNavImageName;
     mainVC.rightNavImageName = self.rightNavImageName;
     // 导航栏点击事件
