@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "MessageTableViewController.h"
 
 @interface MainViewController ()
 
@@ -59,6 +60,7 @@
 }
 
 #pragma mark - 事件监听
+/// 点击左侧菜单按钮
 - (void)menuBtnDidClick:(UIButton *)button {
     if (self.type != DrawerTypeRight) {
         if (self.mainVcMenuNavBtnClickBlock) {
@@ -67,12 +69,16 @@
     }
 }
 
+/// 点击右侧消息按钮
 - (void)messageBtnDidClick:(UIButton *)button {
     if (self.type != DrawerTypeLeft) {
         if (self.mainVcMessageNavBtnClickBlock) {
             self.mainVcMessageNavBtnClickBlock(button);
         }
     }
+    
+    MessageTableViewController *vc = [[MessageTableViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

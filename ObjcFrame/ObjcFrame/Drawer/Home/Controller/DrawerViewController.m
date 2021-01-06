@@ -13,10 +13,11 @@
 #define targetLeftX -180    // 右侧视图宽度
 #define maxY 100            // 影响缩放
 
-@interface DrawerViewController ()
+@interface DrawerViewController () <UINavigationControllerDelegate>
 @property (strong, nonatomic) UIView *mainView;     // 主视图
 @property (strong, nonatomic) UIView *leftView;     // 左视图
 @property (strong, nonatomic) UIView *rightView;    // 右视图
+@property (strong, nonatomic) UIPanGestureRecognizer *pan;  // 滑动手势
 @end
 
 @implementation DrawerViewController
@@ -79,6 +80,7 @@
     };
     
     BaseNavigationController *mainNav = [[BaseNavigationController alloc] initWithRootViewController:mainVC];
+    mainNav.delegate = self;
     [self addChildViewController:mainNav];
     [self.view addSubview:mainNav.view];
     self.mainView = mainNav.view;
@@ -87,8 +89,7 @@
 /// 添加手势
 - (void)addGestureRecognizer {
     // 添加拖拽手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    [self.view addGestureRecognizer:pan];
+    [self.view addGestureRecognizer:self.pan];
     
     // 添加单击手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
@@ -122,8 +123,13 @@
     }
     
     // 修改mainView的frame
-//    self.mainView.frame = [self frameWithOffsetX:offsetX];
-    self.mainView.x += offsetX;
+    if (self.scaleEffect) {
+        // 带缩放效果
+        self.mainView.frame = [self frameWithOffsetX:offsetX];
+    } else {
+        // 只有向右滑动效果
+        self.mainView.x += offsetX;
+    }
     
     // 复位
     [pan setTranslation:CGPointZero inView:self.mainView];
@@ -143,8 +149,13 @@
         CGFloat offsetX = target - self.mainView.frame.origin.x;
         // 通过动画定位到指定位置
         [UIView animateWithDuration:0.25 animations:^{
-//            self.mainView.frame = [self frameWithOffsetX:offsetX];
-            self.mainView.x += offsetX;
+            if (self.scaleEffect) {
+                // 带缩放效果
+                self.mainView.frame = [self frameWithOffsetX:offsetX];
+            } else {
+                // 只有向右滑动效果
+                self.mainView.x += offsetX;
+            }
         }];
     }
 }
@@ -191,6 +202,31 @@
     CGFloat w = scale * ScreenWidth;
     
     return CGRectMake(x, y, w, h);
+}
+
+#pragma mark - UINavigationControllerDelegate
+/// 不在首页时禁止抽屉效果，避免和左滑返回手势冲突
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (![viewController isKindOfClass:[MainViewController class]]) {
+        // 移除拖拽手势
+        [self.view removeGestureRecognizer:self.pan];
+    }
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if ([viewController isKindOfClass:[MainViewController class]]) {
+        // 重新添加拖拽手势
+        [self.view addGestureRecognizer:self.pan];
+    }
+}
+
+#pragma mark - 懒加载
+
+- (UIPanGestureRecognizer *)pan {
+    if (!_pan) {
+        _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    }
+    return _pan;
 }
 
 @end

@@ -55,6 +55,7 @@
 		78A9E95625A4478A002934A7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E95525A4478A002934A7 /* MainViewController.m */; };
 		78A9E95A25A4479B002934A7 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E95925A4479B002934A7 /* LeftViewController.m */; };
 		78A9E95E25A447AA002934A7 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E95D25A447AA002934A7 /* RightViewController.m */; };
+		78E01D1225A55D45006AEB32 /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E01D1125A55D45006AEB32 /* MessageTableViewController.m */; };
 		D13094E58B1EE51860CA2D94 /* Pods_ObjcFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8367CAD019285D80F68EF4DA /* Pods_ObjcFrame.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,8 @@
 		78A9E95C25A447AA002934A7 /* RightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		78A9E95D25A447AA002934A7 /* RightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		78B003E2254D3F5000051FA9 /* HideNavigationBarProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HideNavigationBarProtocol.h; sourceTree = "<group>"; };
+		78E01D1025A55D45006AEB32 /* MessageTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
+		78E01D1125A55D45006AEB32 /* MessageTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
 		8367CAD019285D80F68EF4DA /* Pods_ObjcFrame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcFrame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -635,6 +638,31 @@
 		78A9E94E25A446BC002934A7 /* Drawer */ = {
 			isa = PBXGroup;
 			children = (
+				78E01D0C25A55CD6006AEB32 /* Home */,
+				78E01D0D25A55CE5006AEB32 /* Message */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		78E01D0C25A55CD6006AEB32 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				78E01D0E25A55CEC006AEB32 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		78E01D0D25A55CE5006AEB32 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				78E01D0F25A55CFC006AEB32 /* Controller */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		78E01D0E25A55CEC006AEB32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				78A9E94F25A446F9002934A7 /* DrawerViewController.h */,
 				78A9E95025A446F9002934A7 /* DrawerViewController.m */,
 				78A9E95425A4478A002934A7 /* MainViewController.h */,
@@ -644,7 +672,16 @@
 				78A9E95C25A447AA002934A7 /* RightViewController.h */,
 				78A9E95D25A447AA002934A7 /* RightViewController.m */,
 			);
-			path = Drawer;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		78E01D0F25A55CFC006AEB32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78E01D1025A55D45006AEB32 /* MessageTableViewController.h */,
+				78E01D1125A55D45006AEB32 /* MessageTableViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		915441286683A96B1947CF48 /* Frameworks */ = {
@@ -785,6 +822,7 @@
 				789B789722FD562D00C43ADB /* MessageViewController.m in Sources */,
 				789B785722FD556500C43ADB /* main.m in Sources */,
 				78A9E95E25A447AA002934A7 /* RightViewController.m in Sources */,
+				78E01D1225A55D45006AEB32 /* MessageTableViewController.m in Sources */,
 				785D0A892360380600C61F31 /* BaseCollectionViewController.m in Sources */,
 				78011D3C23602DCC00BEFDE3 /* TopImageButton.m in Sources */,
 				78011D502360342200BEFDE3 /* BWLoadingStyleManager.m in Sources */,
