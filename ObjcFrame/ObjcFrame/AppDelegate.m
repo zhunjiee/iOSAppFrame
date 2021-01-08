@@ -33,18 +33,15 @@
     return YES;
 }
 
-
-/**
- 设置根控制器
- */
+/// 设置根控制器
 - (void)setupRootViewController {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 普通tabBar控制器
-//    BaseTabBarController *rootController = [[BaseTabBarController alloc] init];
+    BaseTabBarController *rootController = [[BaseTabBarController alloc] init];
     // 抽屉效果控制器
-    DrawerViewController *rootController = [[DrawerViewController alloc] init];
-    rootController.type = DrawerTypeLeft;
-    rootController.rightNavImageName = @"message_nav_icon";
+//    DrawerViewController *rootController = [[DrawerViewController alloc] init];
+//    rootController.type = DrawerTypeLeft;
+//    rootController.rightNavImageName = @"message_nav_icon";
     self.window.rootViewController = rootController;
     [self.window makeKeyAndVisible];
 }

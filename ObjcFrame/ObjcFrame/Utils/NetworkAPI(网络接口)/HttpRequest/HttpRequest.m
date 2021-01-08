@@ -35,6 +35,7 @@ static id _instance = nil;
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         manager.operationQueue.maxConcurrentOperationCount = 5;       // 最大并发数
         manager.requestSerializer.timeoutInterval = 30;     // 请求超时时间
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
         self.manager = manager;
     }
     return self;

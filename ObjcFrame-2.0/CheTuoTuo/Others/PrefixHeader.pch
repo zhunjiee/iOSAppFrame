@@ -1,0 +1,117 @@
+//
+//  MengTianXia.pch
+//  MengTianXIa
+//
+//  Created by zl on 2019/8/9.
+//  Copyright © 2019 qttx. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import <SVProgressHUD.h>
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import <IQKeyboardManager.h>
+#import <Masonry.h>
+#import <SDWebImage.h>
+#import <XHLaunchAd.h>
+#import <SDCycleScrollView.h>
+
+#import "UIBarButtonItem+Extension.h"     // 自定义TabBarItem
+#import "UIViewController+Extension.h"     // 获取状态栏/导航栏/TabBar的高度等
+#import "UIView+Frame.h"        // frame简写
+#import "UIView+CornerAndBorder.h"       // 圆角及边框
+#import "UIView+Extension.h"       // 当前控制器等
+#import "CALayer+Extension.h"       // xib添加运行时属性设置borderColor
+#import "UIColor+Hex.h"
+#import "UITableView+NoData.h"
+#import "UICollectionView+NoData.h"
+#import "UIButton+Utils.h"
+#import "UILabel+Utils.h"
+#import "UIImage+Util.h"
+#import "UIImage+Circle.h"      // 圆形图片
+#import "NSData+Compress.h"
+#import "UITextView+Placeholder.h"
+
+#import "ConstantHeader.h"      // 常量
+#import "BWUserDefaults.h"
+#import "NetworkManager.h"
+#import "RightImageButton.h"
+#import "TopImageButton.h"
+
+#pragma mark - 尺寸相关
+// 屏幕尺寸
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+// 缩放比例 - 以宽度比例缩放
+#define ScaleWidth(width) ((width)*(ScreenWidth/375.f))
+
+// 是否为刘海屏机型
+#define kIsBangsScreen ({\
+    BOOL isBangsScreen = NO; \
+    if (@available(iOS 11.0, *)) { \
+        UIWindow *window = [[UIApplication sharedApplication].windows firstObject]; \
+        isBangsScreen = window.safeAreaInsets.bottom > 0; \
+    } \
+    isBangsScreen; \
+})
+// 状态栏高度
+#define StatusBarHeight (CGFloat)(kIsBangsScreen?(44.0):(20.0))
+// 导航栏高度
+#define NavBarHeight (44)
+// 状态栏和导航栏总高度
+#define NavBarAndStatusBarHeight (CGFloat)(kIsBangsScreen?(88.0):(64.0))
+// TabBar高度
+#define TabBarHeight (CGFloat)(kIsBangsScreen?(49.0 + 34.0):(49.0))
+// 顶部安全区域远离高度
+#define TopBarSafeHeight (CGFloat)(kIsBangsScreen?(44.0):(0))
+// 底部安全区域远离高度
+#define BottomSafeHeight (CGFloat)(kIsBangsScreen?(34.0):(0))
+// iPhoneX的状态栏高度差值
+#define TopBarDifHeight (CGFloat)(kIsBangsScreen?(24.0):(0))
+// 导航条和Tabbar总高度
+#define NavAndTabHeight (NavBarAndStatusBarHeight + TabBarHeight)
+// 控制器View区域去除导航栏和底部TbaBar后的高度
+#define ControllerViewHeight (ScreenHeight - NavAndTabHeight)
+// 控制器View区域去除导航栏后的高度
+#define ControllerViewNoNavBarHeight (ScreenHeight - NavBarAndStatusBarHeight)
+
+
+#pragma mark - 颜色相关
+// 颜色
+#define BWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define BWAlphaColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/1.0]
+// 白色
+#define BW_WHITE_COLOR [UIColor whiteColor]
+//背景颜色
+#define BACKGROUND_COLOR BWColor(246, 246, 246)
+//主题颜色
+#define THEME_COLOR BWColor(191, 0, 8)
+//Title颜色
+#define TITLE_COLOR BWColor(140, 43, 44)
+//线条颜色
+#define LINE_GRAY_COLOR BWColor(236, 236, 236)
+//字体常规颜色
+#define TEXT_BLACK_COLOR BWColor(51, 51, 51)
+//字体轻颜色
+#define TEXT_GRAY_COLOR BWColor(153, 153, 153)
+// 红色字体
+#define TEXT_RED_COLOR BWColor(191, 0, 8)
+// 亮灰色
+#define LIGHT_GRAY_COLOR BWColor(153, 153, 153)
+
+
+#pragma mark - 常用方法
+// 字符串是否为空
+#define BWStringIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO)
+// 空字符串返回处理
+#define BWCheckString(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? @"" : str)
+// self的弱引用
+#define BWeakSelf __weak typeof(self) weakSelf = self;
+
+
+#endif /* MengTianXia_pch */

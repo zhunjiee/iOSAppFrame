@@ -23,12 +23,25 @@ PODS:
   - MBProgressHUD (1.1.0)
   - MJExtension (3.2.1)
   - MJRefresh (3.2.0)
+  - MMDrawerController (0.6.0):
+    - MMDrawerController/Core (= 0.6.0)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
+    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
+    - MMDrawerController/Subclass (= 0.6.0)
+  - MMDrawerController/Core (0.6.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.6.0):
+    - MMDrawerController/Core
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
   - SDWebImage/Core (5.2.3)
   - SVProgressHUD (2.2.5)
+  - ViewDeck (3.1.0)
   - XHLaunchAd (3.9.8):
     - FLAnimatedImage (~> 1.0.12)
 
@@ -40,9 +53,11 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJExtension
   - MJRefresh
+  - MMDrawerController
   - SDCycleScrollView
   - SDWebImage
   - SVProgressHUD
+  - ViewDeck
   - XHLaunchAd
 
 SPEC REPOS:
@@ -60,7 +75,9 @@ SPEC REPOS:
   trunk:
     - JCore
     - JPush
+    - MMDrawerController
     - SVProgressHUD
+    - ViewDeck
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -72,11 +89,13 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  ViewDeck: 942d90dd23c9f97cc8038be352255378167edcca
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
 
-PODFILE CHECKSUM: 6cf8a95565bd4432bd1b2126fab2f296b2bad223
+PODFILE CHECKSUM: 711591af06e8ef93ce2257829e5c4cca3f888252
 
 COCOAPODS: 1.10.0
