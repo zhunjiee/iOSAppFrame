@@ -33,6 +33,7 @@
 #import "UILabel+Utils.h"
 #import "UIImage+Util.h"
 #import "UIImage+Circle.h"      // 圆形图片
+#import "UIImage+Create.h"
 #import "NSData+Compress.h"
 #import "UITextView+Placeholder.h"
 

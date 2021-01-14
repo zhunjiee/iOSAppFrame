@@ -9,7 +9,7 @@
 #import "BaseNavigationController.h"
 #import "HideNavigationBarProtocol.h"
 
-@interface BaseNavigationController () <UIGestureRecognizerDelegate, UINavigationControllerDelegate>
+@interface BaseNavigationController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -17,9 +17,8 @@
 
 + (void)initialize {
     UINavigationBar *bar = [UINavigationBar appearance];
-    // 去除导航栏的毛玻璃效果
-    bar.translucent = NO;
-    [bar setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    // 设置纯白色背景图片
+    [bar setBackgroundImage:[UIImage createImageWithColor:[UIColor whiteColor] size:CGSizeMake(ScreenWidth, NavBarAndStatusBarHeight)] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     // 隐藏导航栏底部分割线
     [bar setShadowImage:[UIImage new]];
     // 设置标题文字
@@ -33,19 +32,17 @@
     
     // 设置手势代理,开启向右滑返回功能
     self.interactivePopGestureRecognizer.delegate = self;
-    
-    // 遵守代理隐藏导航栏
-    self.delegate = self;
 }
 
 
 #pragma mark - 隐藏导航栏
+/// 隐藏导航栏 - 直接实现父类代理方法即可,不用遵守所谓的delegete
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(nonnull UIViewController *)viewController animated:(BOOL)animated {
-    //如果控制器遵守了 HideNavigationBarProtocol 协议，则需要隐藏导航栏
+    // 如果控制器遵守了 HideNavigationBarProtocol 协议，则需要隐藏导航栏
     BOOL HideNav = [[viewController class] conformsToProtocol:@protocol(HideNavigationBarProtocol)];
-    //隐藏导航栏后会导致边缘右滑返回的手势失效，需要重新设置一下这个代理
+    // 隐藏导航栏后会导致边缘右滑返回的手势失效，需要重新设置一下这个代理
     self.interactivePopGestureRecognizer.delegate = self;
-    //设置控制器是否要隐藏导航栏
+    // 设置控制器是否要隐藏导航栏
     [self setNavigationBarHidden:HideNav animated:YES];
 }
 

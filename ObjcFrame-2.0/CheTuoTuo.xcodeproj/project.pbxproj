@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D71412592F4D8EA94FCD7C4 /* Pods_AbstractTarget_CheTuoTuoDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF95DF264A5FCFC70B338C /* Pods_AbstractTarget_CheTuoTuoDriver.framework */; };
+		7849A89725B049BD00E1C92E /* UIImage+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7849A89625B049BD00E1C92E /* UIImage+Create.m */; };
+		7849A89825B049BD00E1C92E /* UIImage+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7849A89625B049BD00E1C92E /* UIImage+Create.m */; };
 		78624A1C25A697830076B292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78624A1B25A697830076B292 /* AppDelegate.m */; };
 		78624A1F25A697830076B292 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78624A1E25A697830076B292 /* SceneDelegate.m */; };
 		78624A2A25A697870076B292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78624A2825A697870076B292 /* LaunchScreen.storyboard */; };
@@ -99,6 +101,14 @@
 		78624C1C25A6FBEA0076B292 /* HomePublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78624C1B25A6FBEA0076B292 /* HomePublishView.xib */; };
 		7897051B25A7ECDC00919F82 /* HomeLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7897051925A7ECDC00919F82 /* HomeLocationCell.m */; };
 		7897051C25A7ECDC00919F82 /* HomeLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7897051A25A7ECDC00919F82 /* HomeLocationCell.xib */; };
+		78A2541125B00F8400099A5A /* BWTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2540F25B00F8400099A5A /* BWTitleScrollView.m */; };
+		78A2541225B00F8400099A5A /* BWTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2540F25B00F8400099A5A /* BWTitleScrollView.m */; };
+		78A2541C25B00F9300099A5A /* BWCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2541725B00F9300099A5A /* BWCollectionViewLayoutAttributes.m */; };
+		78A2541D25B00F9300099A5A /* BWCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2541725B00F9300099A5A /* BWCollectionViewLayoutAttributes.m */; };
+		78A2541E25B00F9300099A5A /* BWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2541925B00F9300099A5A /* BWCollectionViewFlowLayout.m */; };
+		78A2541F25B00F9300099A5A /* BWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2541925B00F9300099A5A /* BWCollectionViewFlowLayout.m */; };
+		78A2542025B00F9300099A5A /* BWCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2541B25B00F9300099A5A /* BWCollectionReusableView.m */; };
+		78A2542125B00F9300099A5A /* BWCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A2541B25B00F9300099A5A /* BWCollectionReusableView.m */; };
 		78E01D2F25A5A2D6006AEB32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E01D2E25A5A2D6006AEB32 /* AppDelegate.m */; };
 		78E01D3225A5A2D6006AEB32 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E01D3125A5A2D6006AEB32 /* SceneDelegate.m */; };
 		78E01D3D25A5A2D9006AEB32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E01D3B25A5A2D9006AEB32 /* LaunchScreen.storyboard */; };
@@ -119,6 +129,8 @@
 		48F3D274BF647A5C6E0B6691 /* Pods-CheTuoTuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheTuoTuo.debug.xcconfig"; path = "Target Support Files/Pods-CheTuoTuo/Pods-CheTuoTuo.debug.xcconfig"; sourceTree = "<group>"; };
 		5332B359A13F6E04524E3D62 /* Pods-AbstractTarget-CheTuoTuoDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbstractTarget-CheTuoTuoDriver.debug.xcconfig"; path = "Target Support Files/Pods-AbstractTarget-CheTuoTuoDriver/Pods-AbstractTarget-CheTuoTuoDriver.debug.xcconfig"; sourceTree = "<group>"; };
 		58F8E5BD26630648FCB8A30E /* Pods_AbstractTarget_CheTuoTuo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbstractTarget_CheTuoTuo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7849A89525B049BD00E1C92E /* UIImage+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Create.h"; sourceTree = "<group>"; };
+		7849A89625B049BD00E1C92E /* UIImage+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Create.m"; sourceTree = "<group>"; };
 		78624A1825A697830076B292 /* CheTuoTuoDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheTuoTuoDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78624A1A25A697830076B292 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		78624A1B25A697830076B292 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,6 +229,14 @@
 		7897051825A7ECDC00919F82 /* HomeLocationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeLocationCell.h; sourceTree = "<group>"; };
 		7897051925A7ECDC00919F82 /* HomeLocationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeLocationCell.m; sourceTree = "<group>"; };
 		7897051A25A7ECDC00919F82 /* HomeLocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeLocationCell.xib; sourceTree = "<group>"; };
+		78A2540F25B00F8400099A5A /* BWTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTitleScrollView.m; sourceTree = "<group>"; };
+		78A2541025B00F8400099A5A /* BWTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTitleScrollView.h; sourceTree = "<group>"; };
+		78A2541625B00F9300099A5A /* BWCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		78A2541725B00F9300099A5A /* BWCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		78A2541825B00F9300099A5A /* BWCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWCollectionReusableView.h; sourceTree = "<group>"; };
+		78A2541925B00F9300099A5A /* BWCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		78A2541A25B00F9300099A5A /* BWCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		78A2541B25B00F9300099A5A /* BWCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWCollectionReusableView.m; sourceTree = "<group>"; };
 		78E01D2A25A5A2D6006AEB32 /* CheTuoTuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheTuoTuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E01D2D25A5A2D6006AEB32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		78E01D2E25A5A2D6006AEB32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -318,12 +338,14 @@
 		78624ABA25A6B1B30076B292 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				78624ABB25A6B1B30076B292 /* NSData+Compress.h */,
 				78624ABC25A6B1B30076B292 /* UIImage+Util.h */,
-				78624ABD25A6B1B30076B292 /* UIImage+Circle.m */,
-				78624ABE25A6B1B30076B292 /* NSData+Compress.m */,
 				78624ABF25A6B1B30076B292 /* UIImage+Util.m */,
 				78624AC025A6B1B30076B292 /* UIImage+Circle.h */,
+				78624ABD25A6B1B30076B292 /* UIImage+Circle.m */,
+				7849A89525B049BD00E1C92E /* UIImage+Create.h */,
+				7849A89625B049BD00E1C92E /* UIImage+Create.m */,
+				78624ABB25A6B1B30076B292 /* NSData+Compress.h */,
+				78624ABE25A6B1B30076B292 /* NSData+Compress.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -418,6 +440,8 @@
 		78624B2625A6B43D0076B292 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78A2541525B00F9300099A5A /* CustomFlowLayout(section背景色) */,
+				78A2540E25B00F8400099A5A /* BWTitleScrollView(滚动标题) */,
 				78624B2725A6B43D0076B292 /* BWSearchBarView(搜索框) */,
 				78624B2A25A6B43D0076B292 /* BWScrollView.h */,
 				78624B2B25A6B43D0076B292 /* BWScrollView.m */,
@@ -670,6 +694,28 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		78A2540E25B00F8400099A5A /* BWTitleScrollView(滚动标题) */ = {
+			isa = PBXGroup;
+			children = (
+				78A2540F25B00F8400099A5A /* BWTitleScrollView.m */,
+				78A2541025B00F8400099A5A /* BWTitleScrollView.h */,
+			);
+			path = "BWTitleScrollView(滚动标题)";
+			sourceTree = "<group>";
+		};
+		78A2541525B00F9300099A5A /* CustomFlowLayout(section背景色) */ = {
+			isa = PBXGroup;
+			children = (
+				78A2541625B00F9300099A5A /* BWCollectionViewFlowLayout.h */,
+				78A2541725B00F9300099A5A /* BWCollectionViewLayoutAttributes.m */,
+				78A2541825B00F9300099A5A /* BWCollectionReusableView.h */,
+				78A2541925B00F9300099A5A /* BWCollectionViewFlowLayout.m */,
+				78A2541A25B00F9300099A5A /* BWCollectionViewLayoutAttributes.h */,
+				78A2541B25B00F9300099A5A /* BWCollectionReusableView.m */,
+			);
+			path = "CustomFlowLayout(section背景色)";
 			sourceTree = "<group>";
 		};
 		78E01D2125A5A2D6006AEB32 = {
@@ -983,6 +1029,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7849A89825B049BD00E1C92E /* UIImage+Create.m in Sources */,
 				78624A1C25A697830076B292 /* AppDelegate.m in Sources */,
 				78624B8225A6B89C0076B292 /* DriverHomeViewController.m in Sources */,
 				78624B3425A6B43D0076B292 /* BaseWebViewController.m in Sources */,
@@ -1001,8 +1048,10 @@
 				78624AE925A6B1B30076B292 /* UIButton+Utils.m in Sources */,
 				78624AFD25A6B1B30076B292 /* UITableView+NoData.m in Sources */,
 				78624AE125A6B1B30076B292 /* UIImage+Circle.m in Sources */,
+				78A2542125B00F9300099A5A /* BWCollectionReusableView.m in Sources */,
 				78624BE725A6C9860076B292 /* HomeViewController.m in Sources */,
 				78624AEB25A6B1B30076B292 /* UIView+Frame.m in Sources */,
+				78A2541F25B00F9300099A5A /* BWCollectionViewFlowLayout.m in Sources */,
 				78624B8A25A6B8B30076B292 /* DriverMenuViewController.m in Sources */,
 				78624B3C25A6B43D0076B292 /* BaseTabBarController.m in Sources */,
 				78624A2D25A697870076B292 /* main.m in Sources */,
@@ -1013,6 +1062,7 @@
 				78624BEF25A6C9860076B292 /* NewsViewController.m in Sources */,
 				78624B3E25A6B43D0076B292 /* BaseCollectionViewController.m in Sources */,
 				78624B4025A6B43D0076B292 /* BWSearchBarView.m in Sources */,
+				78A2541D25B00F9300099A5A /* BWCollectionViewLayoutAttributes.m in Sources */,
 				78624AE325A6B1B30076B292 /* NSData+Compress.m in Sources */,
 				78624AE525A6B1B30076B292 /* UIImage+Util.m in Sources */,
 				78624B3A25A6B43D0076B292 /* BaseNavigationController.m in Sources */,
@@ -1022,6 +1072,7 @@
 				78624B6425A6B4990076B292 /* BWUserDefaults.m in Sources */,
 				78624B4425A6B43D0076B292 /* RightImageButton.m in Sources */,
 				78624AE725A6B1B30076B292 /* UILabel+Utils.m in Sources */,
+				78A2541225B00F8400099A5A /* BWTitleScrollView.m in Sources */,
 				78624AF325A6B1B30076B292 /* UIViewController+Extension.m in Sources */,
 				78624BED25A6C9860076B292 /* MessageViewController.m in Sources */,
 				78624B3825A6B43D0076B292 /* BaseViewController.m in Sources */,
@@ -1055,6 +1106,7 @@
 				7897051B25A7ECDC00919F82 /* HomeLocationCell.m in Sources */,
 				78624AFC25A6B1B30076B292 /* UITableView+NoData.m in Sources */,
 				78624B6925A6B4990076B292 /* NetworkManager.m in Sources */,
+				78A2541125B00F8400099A5A /* BWTitleScrollView.m in Sources */,
 				78624BE625A6C9860076B292 /* HomeViewController.m in Sources */,
 				78624AFE25A6B1B30076B292 /* CALayer+Extension.m in Sources */,
 				78624AEE25A6B1B30076B292 /* UIView+Extension.m in Sources */,
@@ -1070,7 +1122,10 @@
 				F337A69C25A6FB12003FC37D /* ForgetViewController.m in Sources */,
 				78624B6525A6B4990076B292 /* HttpRequest.m in Sources */,
 				F337A6A325A6FD4F003FC37D /* SetPswViewController.m in Sources */,
+				7849A89725B049BD00E1C92E /* UIImage+Create.m in Sources */,
 				78624C1825A6FB860076B292 /* HomePublishView.m in Sources */,
+				78A2541C25B00F9300099A5A /* BWCollectionViewLayoutAttributes.m in Sources */,
+				78A2542025B00F9300099A5A /* BWCollectionReusableView.m in Sources */,
 				78624BEA25A6C9860076B292 /* MemberViewController.m in Sources */,
 				78624C0B25A6DDDB0076B292 /* HomeBannerCell.m in Sources */,
 				78624B3925A6B43D0076B292 /* BaseNavigationController.m in Sources */,
@@ -1079,6 +1134,7 @@
 				78624B6725A6B4990076B292 /* UploadParam.m in Sources */,
 				78624AF425A6B1B30076B292 /* UITextView+Placeholder.m in Sources */,
 				78624B4125A6B43D0076B292 /* BWScrollView.m in Sources */,
+				78A2541E25B00F9300099A5A /* BWCollectionViewFlowLayout.m in Sources */,
 				78E01D3225A5A2D6006AEB32 /* SceneDelegate.m in Sources */,
 				F337A69525A6F90F003FC37D /* NextViewController.m in Sources */,
 			);

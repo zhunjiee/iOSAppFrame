@@ -30,11 +30,41 @@
     [super viewWillAppear:animated];
     
     [self monitoredNetworkStatus];
+    if (self.clearNavigationBar) {
+        // 导航栏透明
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (self.clearNavigationBar) {
+        //  导航栏恢复白色
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor whiteColor] size:CGSizeMake(ScreenWidth, NavBarAndStatusBarHeight)] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 #pragma mark - 事件监听
+/// 退出当前控制器
 - (void)popViewController {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+/// 不同类型的暂无数据视图
+/// @param type 暂无数据类型
+- (void)showNoDataViewWithType:(NoDataType)type {
+    [self.tableView showNoDataViewWithType:type];
+}
+
+/// 隐藏暂无数据视图
+- (void)hideNoDataView {
+    [self.tableView hideNoDataView];
+}
+
+/// 显示暂无数据视图-暂无数据
+- (void)showNoDataView {
+    [self.tableView showNoDataView];
 }
 
 #pragma mark - 监测网络环境
@@ -49,6 +79,7 @@
     }];
 }
 
+#pragma mark - section圆角
 /// section剪裁圆角
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.sectionCornerRadius > 0) {

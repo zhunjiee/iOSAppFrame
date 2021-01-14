@@ -36,6 +36,19 @@
     [super viewWillAppear:animated];
     
     [self monitoredNetworkStatus];
+    if (self.clearNavigationBar) {
+        // 导航栏透明
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (self.clearNavigationBar) {
+        //  导航栏恢复白色
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor whiteColor] size:CGSizeMake(ScreenWidth, NavBarAndStatusBarHeight)] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 #pragma mark - 事件监听
@@ -46,23 +59,38 @@
 #pragma mark - 无数据提示
 /// 不同类型的暂无数据视图
 - (void)showNoDataViewWithType:(NoDataType)type {
+    if ([self.noDataView isDescendantOfView:self.view]) {
+        return;
+    }
+    
     NSArray *imageArray = @[
         @"no_data",
         @"no_wifi",
         @"no_content",
         @"no_task",
     ];
+    UIImage *image = [UIImage imageNamed:imageArray[type]];
+    self.noDataImageView.image = image;
+    [self.noDataImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(image.size.width);
+        make.height.mas_equalTo(image.size.height);
+        make.centerX.equalTo(self.noDataView.mas_centerX);
+        make.centerY.equalTo(self.noDataView.mas_centerY).mas_offset(-20);
+    }];
+    
     NSArray *textArray = @[
         @"暂无数据",
         @"没有网络",
         @"暂无内容",
         @"暂无任务",
     ];
-    if (![self.noDataView isDescendantOfView:self.view]) {
-        [self.view addSubview:self.noDataView];
-    }
-    self.noDataImageView.image = [UIImage imageNamed:imageArray[type]];
     self.noDataTipLabel.text = textArray[type];
+    [_noDataTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.noDataView.mas_centerX);
+        make.top.equalTo(self.noDataImageView.mas_bottom).mas_offset(10);
+    }];
+    
+    [self.view addSubview:self.noDataView];
 }
 
 /// 隐藏无数据视图
@@ -104,11 +132,6 @@
         _noDataImageView = [[UIImageView alloc] init];
         _noDataImageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.noDataView addSubview:_noDataImageView];
-        [_noDataImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.mas_equalTo(60);
-            make.centerX.equalTo(self.noDataView.mas_centerX);
-            make.centerY.equalTo(self.noDataView.mas_centerY).mas_offset(-20);
-        }];
     }
     return _noDataImageView;
 }
@@ -120,10 +143,6 @@
         _noDataTipLabel.textColor = [UIColor colorWithRed:138/255.0 green:138/255.0 blue:138/255.0 alpha:1.0];
         _noDataTipLabel.textAlignment = NSTextAlignmentCenter;
         [self.noDataView addSubview:_noDataTipLabel];
-        [_noDataTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.noDataView.mas_centerX);
-            make.top.equalTo(self.noDataImageView.mas_bottom).mas_offset(10);
-        }];
     }
     return _noDataTipLabel;
 }

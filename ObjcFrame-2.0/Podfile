@@ -1,6 +1,7 @@
 platform :ios, '9.0'
 use_frameworks!
-
+inhibit_all_warnings!
+# 忽略三方库警告
 
 abstract_target 'AbstractTarget' do
   # 公用第三方库
@@ -13,11 +14,13 @@ abstract_target 'AbstractTarget' do
   pod 'Masonry' # 布局
   pod 'SDCycleScrollView' # 轮播图
   pod 'XHLaunchAd'  # 启动页广告图
+  pod 'BRPickerView'  # 选择器
   pod 'JPush'  # 极光推送
   pod 'BaiduMapKit' #百度地图SDK
   pod 'BMKLocationKit'
   pod 'ViewDeck' # 抽屉效果-主页不动,菜单上层覆盖
   pod 'MMDrawerController' # 抽屉效果-主页跟随移动
+  
   
   # 用户端
   target 'CheTuoTuo' do

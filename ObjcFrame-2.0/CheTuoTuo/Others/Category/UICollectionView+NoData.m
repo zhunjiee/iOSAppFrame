@@ -17,33 +17,33 @@
     UIImageView *showImageView = [[UIImageView alloc] init];
     showImageView.contentMode = UIViewContentModeScaleAspectFill;
     [backgroundView addSubview:showImageView];
-    
-    UILabel *tipLabel = [[UILabel alloc] init];
-    tipLabel.font = [UIFont systemFontOfSize:15.0f];
-    tipLabel.textColor = [UIColor colorWithRed:138/255.0 green:138/255.0 blue:138/255.0 alpha:1.0];
-    tipLabel.textAlignment = NSTextAlignmentCenter;
-    [backgroundView addSubview:tipLabel];
-    
     NSArray *imageArray = @[
         @"no_data",
         @"no_wifi",
         @"no_content",
         @"no_task",
     ];
+    UIImage *image = [UIImage imageNamed:imageArray[type]];
+    showImageView.image = image;
+    [showImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(image.size.width);
+        make.height.mas_equalTo(image.size.height);
+        make.centerX.equalTo(backgroundView.mas_centerX);
+        make.centerY.equalTo(backgroundView.mas_centerY).mas_offset(-20);
+    }];
+    
+    UILabel *tipLabel = [[UILabel alloc] init];
+    tipLabel.font = [UIFont systemFontOfSize:15.0f];
+    tipLabel.textColor = [UIColor colorWithRed:138/255.0 green:138/255.0 blue:138/255.0 alpha:1.0];
+    tipLabel.textAlignment = NSTextAlignmentCenter;
+    [backgroundView addSubview:tipLabel];
     NSArray *textArray = @[
         @"暂无数据",
         @"没有网络",
         @"暂无内容",
         @"暂无任务",
     ];
-    showImageView.image = [UIImage imageNamed:imageArray[type]];
     tipLabel.text = textArray[type];
-    
-    [showImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(60);
-        make.centerX.mas_equalTo(backgroundView.mas_centerX);
-        make.centerY.mas_equalTo(backgroundView.mas_centerY).mas_offset(-20);
-    }];
     [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(backgroundView.mas_centerX);
         make.top.mas_equalTo(showImageView.mas_bottom).mas_offset(10);

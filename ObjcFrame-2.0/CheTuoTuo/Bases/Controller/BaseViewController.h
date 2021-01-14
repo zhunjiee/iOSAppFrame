@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
+@property (assign, nonatomic) BOOL clearNavigationBar;   // 导航栏透明
 
 /// 退出当前控制器
 - (void)popViewController;
