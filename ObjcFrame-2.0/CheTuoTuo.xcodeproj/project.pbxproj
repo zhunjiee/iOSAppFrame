@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D71412592F4D8EA94FCD7C4 /* Pods_AbstractTarget_CheTuoTuoDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF95DF264A5FCFC70B338C /* Pods_AbstractTarget_CheTuoTuoDriver.framework */; };
+		7839B2DA25B1444400A81897 /* SVProgressHUD+Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7839B2D825B1444300A81897 /* SVProgressHUD+Message.m */; };
+		7839B2DB25B1444400A81897 /* SVProgressHUD+Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7839B2D825B1444300A81897 /* SVProgressHUD+Message.m */; };
 		7849A89725B049BD00E1C92E /* UIImage+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7849A89625B049BD00E1C92E /* UIImage+Create.m */; };
 		7849A89825B049BD00E1C92E /* UIImage+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7849A89625B049BD00E1C92E /* UIImage+Create.m */; };
 		78624A1C25A697830076B292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78624A1B25A697830076B292 /* AppDelegate.m */; };
@@ -129,6 +131,8 @@
 		48F3D274BF647A5C6E0B6691 /* Pods-CheTuoTuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheTuoTuo.debug.xcconfig"; path = "Target Support Files/Pods-CheTuoTuo/Pods-CheTuoTuo.debug.xcconfig"; sourceTree = "<group>"; };
 		5332B359A13F6E04524E3D62 /* Pods-AbstractTarget-CheTuoTuoDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbstractTarget-CheTuoTuoDriver.debug.xcconfig"; path = "Target Support Files/Pods-AbstractTarget-CheTuoTuoDriver/Pods-AbstractTarget-CheTuoTuoDriver.debug.xcconfig"; sourceTree = "<group>"; };
 		58F8E5BD26630648FCB8A30E /* Pods_AbstractTarget_CheTuoTuo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbstractTarget_CheTuoTuo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7839B2D825B1444300A81897 /* SVProgressHUD+Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+Message.m"; sourceTree = "<group>"; };
+		7839B2D925B1444400A81897 /* SVProgressHUD+Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+Message.h"; sourceTree = "<group>"; };
 		7849A89525B049BD00E1C92E /* UIImage+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Create.h"; sourceTree = "<group>"; };
 		7849A89625B049BD00E1C92E /* UIImage+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Create.m"; sourceTree = "<group>"; };
 		78624A1825A697830076B292 /* CheTuoTuoDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheTuoTuoDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +335,8 @@
 				78624ADB25A6B1B30076B292 /* UICollectionView+NoData.m */,
 				78624ADD25A6B1B30076B292 /* UIViewController+Extension.h */,
 				78624AD125A6B1B30076B292 /* UIViewController+Extension.m */,
+				7839B2D925B1444400A81897 /* SVProgressHUD+Message.h */,
+				7839B2D825B1444300A81897 /* SVProgressHUD+Message.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -527,8 +533,8 @@
 		78624B5525A6B4990076B292 /* BWUserDefaults(缓存) */ = {
 			isa = PBXGroup;
 			children = (
-				78624B5625A6B4990076B292 /* BWUserDefaults.m */,
 				78624B5725A6B4990076B292 /* BWUserDefaults.h */,
+				78624B5625A6B4990076B292 /* BWUserDefaults.m */,
 			);
 			path = "BWUserDefaults(缓存)";
 			sourceTree = "<group>";
@@ -1062,6 +1068,7 @@
 				78624BEF25A6C9860076B292 /* NewsViewController.m in Sources */,
 				78624B3E25A6B43D0076B292 /* BaseCollectionViewController.m in Sources */,
 				78624B4025A6B43D0076B292 /* BWSearchBarView.m in Sources */,
+				7839B2DB25B1444400A81897 /* SVProgressHUD+Message.m in Sources */,
 				78A2541D25B00F9300099A5A /* BWCollectionViewLayoutAttributes.m in Sources */,
 				78624AE325A6B1B30076B292 /* NSData+Compress.m in Sources */,
 				78624AE525A6B1B30076B292 /* UIImage+Util.m in Sources */,
@@ -1098,6 +1105,7 @@
 				78624B3325A6B43D0076B292 /* BaseWebViewController.m in Sources */,
 				F337A68E25A6F07C003FC37D /* LoginViewController.m in Sources */,
 				78624AF025A6B1B30076B292 /* UIColor+Hex.m in Sources */,
+				7839B2DA25B1444400A81897 /* SVProgressHUD+Message.m in Sources */,
 				78624AF225A6B1B30076B292 /* UIViewController+Extension.m in Sources */,
 				78624AE625A6B1B30076B292 /* UILabel+Utils.m in Sources */,
 				78624AF825A6B1B30076B292 /* NSObject+BWAlert.m in Sources */,

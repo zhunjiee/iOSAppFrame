@@ -36,6 +36,7 @@
 #import "UIImage+Create.h"
 #import "NSData+Compress.h"
 #import "UITextView+Placeholder.h"
+#import "SVProgressHUD+Message.h"
 
 #import "ConstantHeader.h"      // 常量
 #import "BWUserDefaults.h"

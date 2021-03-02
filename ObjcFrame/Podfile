@@ -7,7 +7,6 @@ target 'ObjcFrame' do
 
   # Pods for ObjcFrame
   pod 'AFNetworking'
-  pod 'MBProgressHUD' # HUD
   pod 'SVProgressHUD' # HUD
   pod 'IQKeyboardManager' # 键盘
   pod 'SDWebImage'
@@ -17,6 +16,7 @@ target 'ObjcFrame' do
   pod 'SDCycleScrollView' # 轮播图
   pod 'XHLaunchAd'  # 启动页广告图
   pod 'JPush'  # 极光推送
-  pod 'MMDrawerController' # 抽屉效果-主页跟随移动
-  pod 'ViewDeck' # 抽屉效果-主页不动，菜单栏覆盖
+  # pod 'MMDrawerController' # 抽屉效果-主页跟随移动
+  # pod 'ViewDeck' # 抽屉效果-主页不动，菜单栏覆盖
+  
 end

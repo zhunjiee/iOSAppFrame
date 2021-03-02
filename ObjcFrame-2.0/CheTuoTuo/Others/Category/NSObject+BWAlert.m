@@ -7,19 +7,18 @@
 //
 
 #import "NSObject+BWAlert.h"
-#import "UIViewController+Extension.m"
 
 @implementation NSObject (BWAlert)
 
-+ (UIAlertController *)showAlertViewWithTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle {
+- (UIAlertController *)showAlertViewWithTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle {
     return [self showAlertViewWithTitle:title message:message confirmTitle:confirmTitle confirmAction:nil];
 }
 
-+ (UIAlertController *)showAlertViewWithTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle confirmAction:(void(^)(void))confirmAction {
+- (UIAlertController *)showAlertViewWithTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle confirmAction:(void(^)(void))confirmAction {
     return [self showAlertViewWithTitle:title message:message confirmTitle:confirmTitle cancelTitle:nil confirmAction:confirmAction cancelAction:nil];
 }
 
-+ (UIAlertController *)showAlertViewWithTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle cancelTitle:(NSString *)cancelTitle confirmAction:(void(^)(void))confirmAction cancelAction:(void(^)(void))cancelAction {
+- (UIAlertController *)showAlertViewWithTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle cancelTitle:(NSString *)cancelTitle confirmAction:(void(^)(void))confirmAction cancelAction:(void(^)(void))cancelAction {
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     /// 左边按钮
@@ -34,9 +33,35 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[UIViewController getCurrentViewController] presentViewController:alertController animated:YES completion:NULL];
+        [[self getCurrentViewController] presentViewController:alertController animated:YES completion:NULL];
     });
     return alertController;
+}
+
+/// 获取当前控制器
+- (UIViewController *)getCurrentViewController {
+    UIViewController *resultVC = nil;
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow *tmpWin in windows) {
+            if (tmpWin.windowLevel == UIWindowLevelNormal) {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]]) {
+        resultVC = nextResponder;
+    } else {
+        resultVC = window.rootViewController;
+    }
+    NSLog(@"CurrentViewController --- %@", resultVC);
+    return resultVC;
 }
 
 @end

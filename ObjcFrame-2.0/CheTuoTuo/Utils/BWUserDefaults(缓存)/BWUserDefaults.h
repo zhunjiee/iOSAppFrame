@@ -11,48 +11,45 @@
 
 @interface BWUserDefaults : NSObject
 
-// 登录状态：yes登录，no登出
-+ (BOOL)loginState;
-+ (void)saveLoginState:(BOOL)state;
+#pragma mark - 用户相关
 
-// 保存token
-+ (NSString *)getToken;
-+ (void)saveToken:(NSString *)token;
+/// 登录状态：yes登录，no登出
++ (BOOL)userLoginState;
++ (void)saveUserLoginState:(BOOL)state;
 
-// uid
+/// 保存token
++ (NSString *)userToken;
++ (void)saveUserToken:(NSString *)token;
+
+/// uid
 + (NSString *)userId;
 + (void)saveUserId:(NSString *)userId;
 
-// 昵称
+/// 昵称
 + (NSString *)userNickName;
 + (void)saveUserNickname:(NSString *)nickname;
 
-// 用户名
+/// 用户名
 + (NSString *)userName;
 + (void)saveUserName:(NSString *)userName;
 
-// 手机号码
+/// 手机号码
 + (NSString *)userPhoneNumber;
 + (void)saveUserPhoneNumber:(NSString *)phoneNumber;
 
-// 手机号码
+/// 密码
 + (NSString *)userPassword;
 + (void)saveUserPassword:(NSString *)password;
 
-
-/**
- 用户位置信息
- */
-
-// 用户所在城市
+/// 用户所在城市
 + (NSString *)userCityName;
 + (void)saveUserCityName:(NSString *)city;
 
-// 经度
-+ (CGFloat)userLocationLongitude;
-+ (void)saveUserLocationLongitude:(CGFloat)longitude;
+/// 用户当前经纬度
++ (CLLocationCoordinate2D)userLocation;
++ (void)saveUserLocation:(CLLocationCoordinate2D)location;
 
-// 纬度
-+ (CGFloat)userLocationLatitude;
-+ (void)saveUserLocationLatitude:(CGFloat)latitude;
+#pragma mark - 司机相关
+
+
 @end

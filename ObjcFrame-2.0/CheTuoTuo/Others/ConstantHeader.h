@@ -33,8 +33,7 @@
 #define UserPassword @"UserPassword"
 // 用户位置
 #define UserCityName @"UserCityName"
-#define UserLocationLongitude @"UserLocationLongitude"
-#define UserLocationLatitude @"UserLocationLatitude"
+#define UserLocation @"UserLocation"
 
 
 #pragma mark - 通知key

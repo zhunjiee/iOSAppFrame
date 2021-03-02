@@ -20,10 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取TabBar的高度
 - (float)getTabbarHeight;
 
-
-/// 获取当前控制器
-+ (UIViewController *)getCurrentViewController;
-
 @end
 
 NS_ASSUME_NONNULL_END

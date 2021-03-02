@@ -17,7 +17,7 @@
  @param message message
  @param confirmTitle confirmTitle 按钮的title
  */
-+ (UIAlertController *)showAlertViewWithTitle:(NSString *)title
+- (UIAlertController *)showAlertViewWithTitle:(NSString *)title
                                       message:(NSString *)message
                                  confirmTitle:(NSString *)confirmTitle;
 /**
@@ -28,7 +28,7 @@
  @param confirmTitle confirmTitle 按钮title
  @param confirmAction 按钮的点击事件处理
  */
-+ (UIAlertController *)showAlertViewWithTitle:(NSString *)title
+- (UIAlertController *)showAlertViewWithTitle:(NSString *)title
                                       message:(NSString *)message
                                  confirmTitle:(NSString *)confirmTitle
                                 confirmAction:(void(^)(void))confirmAction;
@@ -42,11 +42,14 @@
  @param confirmAction 右边按钮的点击事件
  @param cancelAction 左边按钮的点击事件
  */
-+ (UIAlertController *)showAlertViewWithTitle:(NSString *)title
+- (UIAlertController *)showAlertViewWithTitle:(NSString *)title
                                       message:(NSString *)message
                                  confirmTitle:(NSString *)confirmTitle
                                   cancelTitle:(NSString *)cancelTitle
                                 confirmAction:(void(^)(void))confirmAction
                                  cancelAction:(void(^)(void))cancelAction;
+
+/// 获取当前控制器
+- (UIViewController *)getCurrentViewController;
 
 @end

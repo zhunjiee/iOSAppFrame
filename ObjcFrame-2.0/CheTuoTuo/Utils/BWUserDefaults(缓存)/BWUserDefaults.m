@@ -12,8 +12,10 @@
 
 @implementation BWUserDefaults
 
-// 登录状态
-+ (BOOL)loginState {
+#pragma mark - 用户相关
+
+/// 登录状态
++ (BOOL)userLoginState {
     if ([UserDefaults objectForKey:UserLoginState] == nil) {
         [UserDefaults setObject:@"0" forKey:UserLoginState];
         [UserDefaults synchronize];
@@ -25,7 +27,7 @@
     }
     return NO;
 }
-+ (void)saveLoginState:(BOOL)state {
++ (void)saveUserLoginState:(BOOL)state {
     if (state) {
         //登录
         [UserDefaults setObject:@"1" forKey:UserLoginState];
@@ -38,23 +40,23 @@
         [UserDefaults setObject:nil forKey:Username];
         [UserDefaults setObject:nil forKey:UserNickname];
         [UserDefaults setObject:nil forKey:UserPhoneNumber];
-        [UserDefaults setObject:nil forKey:UserLocationLongitude];
-        [UserDefaults setObject:nil forKey:UserLocationLatitude];
+        [UserDefaults setObject:nil forKey:UserCityName];
+        [UserDefaults setObject:nil forKey:UserLocation];
     }
     [UserDefaults synchronize];
 }
 
-// token
-+ (NSString *)getToken {
+/// token
++ (NSString *)userToken {
     NSString *token = [UserDefaults objectForKey:UserToken];
     return BWCheckString(token);
 }
-+ (void)saveToken:(NSString *)token {
++ (void)saveUserToken:(NSString *)token {
     [UserDefaults setObject:token forKey:UserToken];
     [UserDefaults synchronize];
 }
 
-//uid
+/// uid
 + (NSString *)userId {
     NSString *userId = [UserDefaults objectForKey:UserID];
     return BWCheckString(userId);
@@ -64,7 +66,7 @@
     [UserDefaults synchronize];
 }
 
-// 昵称
+/// 昵称
 + (NSString *)userNickName {
     NSString *nickname = [UserDefaults objectForKey:UserNickname];
     return BWCheckString(nickname);
@@ -74,7 +76,7 @@
     [UserDefaults synchronize];
 }
 
-// 用户名
+/// 用户名
 + (NSString *)userName {
     NSString *username = [UserDefaults objectForKey:Username];
     return BWCheckString(username);
@@ -84,7 +86,7 @@
     [UserDefaults synchronize];
 }
 
-// 手机号
+/// 手机号
 + (NSString *)userPhoneNumber {
     NSString *phoneNumber = [UserDefaults objectForKey:UserPhoneNumber];
     return BWCheckString(phoneNumber);
@@ -94,7 +96,7 @@
     [UserDefaults synchronize];
 }
 
-// 手机号码
+/// 密码
 + (NSString *)userPassword {
     NSString *password = [UserDefaults objectForKey:UserPassword];
     return BWCheckString(password);
@@ -104,40 +106,35 @@
     [UserDefaults synchronize];
 }
 
-
-/**
- 用户位置信息
- */
-
-// 用户所在城市
+/// 用户所在城市
 + (NSString *)userCityName {
     NSString *cityName = [UserDefaults objectForKey:UserCityName];
     return BWCheckString(cityName);
 }
-
 + (void)saveUserCityName:(NSString *)city {
     [UserDefaults setObject:BWCheckString(city) forKey:UserCityName];
     [UserDefaults synchronize];
 }
 
-// 经度
-+ (CGFloat)userLocationLongitude {
-    CGFloat longitude = [[UserDefaults objectForKey:UserLocationLongitude] floatValue];
-    return longitude;
+/// 用户当前经纬度
++ (CLLocationCoordinate2D)userLocation {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dict = [userDefaults objectForKey:UserLocation];
+    double lat = [dict[@"lat"] doubleValue];
+    double lng = [dict[@"lng"] doubleValue];
+    return CLLocationCoordinate2DMake(lat, lng);
 }
-+ (void)saveUserLocationLongitude:(CGFloat)longitude {
-    [UserDefaults setObject:[NSNumber numberWithFloat:longitude] forKey:UserLocationLongitude];
-    [UserDefaults synchronize];
-}
-// 纬度
-+ (CGFloat)userLocationLatitude {
-    CGFloat latitude = [[UserDefaults objectForKey:UserLocationLatitude] floatValue];
-    return latitude;
-}
-+ (void)saveUserLocationLatitude:(CGFloat)latitude {
-    [UserDefaults setObject:[NSNumber numberWithFloat:latitude] forKey:UserLocationLatitude];
-    [UserDefaults synchronize];
++ (void)saveUserLocation:(CLLocationCoordinate2D)location {
+    NSDictionary *dict = @{
+        @"lat" : @(location.latitude),
+        @"lng" : @(location.longitude),
+    };
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:dict forKey:UserLocation];
+    [userDefaults synchronize];
 }
 
+
+#pragma mark - 司机相关
 
 @end
